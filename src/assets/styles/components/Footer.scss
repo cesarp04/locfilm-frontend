@@ -1,0 +1,105 @@
+@import "../Vars.scss";
+
+footer{
+    width: 100vw;
+    height: 211px;
+}
+.footerMain{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        height: 171px;
+        background-color: $secundary-color;
+}
+.footerMain__logo{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+}
+.footerMain__logo img{
+    width: 195px;
+    height: 60px;
+    margin-left: 16px;
+
+}
+.footerMain__links{
+    grid-column-start: 4;
+    grid-column-end: 6;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+
+
+}
+.footerMain__links a{
+    text-decoration: none;
+    color: white;
+   
+}
+.footerMain__Newsletter{
+    grid-column-start: 7;
+    grid-column-end: 9;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+
+
+}
+.footerMain__Newsletter p{
+    color: white;
+}
+.footerMain__Newsletter p:nth-child(1){
+font-size: 20px;
+font-weight: 600;
+
+}
+.footerMain__Newsletter p:nth-child(2){
+
+}
+.footerMain__BtnNewsletter{
+    grid-column-start: 9;
+    grid-column-end: 11;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.footerMain__BtnNewsletter input{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border: 0;
+    border-radius: 25px;
+    background-color: $black;
+    margin-bottom: 7px;
+}
+::placeholder{
+    color: rgba($color: #ffffff, $alpha: .6);
+}
+.footerMain__BtnNewsletter a{
+    width: 100%;
+    height: 35px;
+    background-color: $button-color;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+
+}
+.footerCredits{
+    height: 40px;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.footerCredits p{
+    color: white;
+}
+.footerCredits p a{
+    text-decoration: none;
+    color: $button-color;
+}
