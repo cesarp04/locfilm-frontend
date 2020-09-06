@@ -1,6 +1,11 @@
 import React from "react"
 import "../assets/styles/App.scss"
+import Header from '../components/Header'
 
-const App = () => <h1>hola mundo</h1>
 
+const App = () => (
+    <div className="App">
+        <Header/>
+    </div>
+)
 export default App
