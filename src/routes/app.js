@@ -7,9 +7,9 @@ import Login from '../containers/Login';
 const App = () => (
     <BrowserRouter>
         <Switch>
-            <Route extact path="/" component={Home} />
-            <Route extact path="/prueba" component={Home2} />
-            <Route extact path="/login" component={Login} />
+            <Route exact path="/" component={ Home } />
+            <Route exact path="/prueba" component={ Home2 } />
+            <Route exact path="/login" component={ Login } />
         </Switch>
     </BrowserRouter>
 );

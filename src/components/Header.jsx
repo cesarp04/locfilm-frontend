@@ -5,15 +5,15 @@ import SearchHeader from './SearchHeader';
 import { Link } from 'react-router-dom'
 
 const Header = ({ showSearch }) => (
-    
+
     <header className="Header3">
         <figure className="Header3__logo">
-            <a href="#"><img src={logo} alt="Logo"/> </a>
+            <Link to='/'><img src={ logo } alt="Logo" /> </Link>
         </figure>
-            {showSearch ? <SearchHeader/> : ''}
+        {showSearch ? <SearchHeader /> : '' }
         <div className="Header3__SignLogin">
             <div className="Header3__SignLogin-Sign">
-                <a href="#">Sign</a>
+                <Link to="#">Sign</Link>
             </div>
             <div className="Header3__SignLogin-Login">
                 <Link to="/login">Login</Link>
