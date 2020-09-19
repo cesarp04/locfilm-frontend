@@ -1,18 +1,17 @@
 import React from "react"
 import "../assets/styles/App.scss"
 import Header from '../components/Header'
-import SearchHeader from '../components/SearchHeader'
+import HomeMain from '../components/HomeMain'
+// import SearchHeader from '../components/SearchHeader'
 import Footer from '../components/Footer'
 
 
 
-const App = () => (
+const Home = () => (
     <div className="App">
-        <Header/>
-        <SearchHeader/>
-       
-        <h1>Contenido </h1>
+        <Header showSearch = {false} />
+        <HomeMain/>
         <Footer/>
     </div>
 )
-export default App
+export default Home

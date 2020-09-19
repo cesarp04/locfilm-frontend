@@ -1,0 +1,152 @@
+@import "../Vars.scss";
+
+
+.Header2{
+    background-color: $secundary-color;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header2__logo{
+    width: 195px;
+    height: 60px;
+}
+.Header2__logo a{
+    width: 100%;
+    height: 100%;
+}
+.Header2__logo a img{
+    width: 100%;
+    height: 100%;
+}
+
+.Header2__Search{
+    display: flex;
+    width: 33%;
+    height: 35px;
+}
+.Header2__Search-input {
+    width: 60%;
+    height: 100%;
+
+}
+.Header2__Search-input input{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    border-radius: 25px 0px 0px 25px;
+    background-color: rgba(255, 255, 255, .6);
+    
+
+}
+.Header2__Search-filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+.Header2__Search img{
+    width: 25px;
+    height: 25px;
+}
+.Header2__Search-BtnSearch{
+    background-color: $button-color;
+    width: 20%;
+    border-radius: 0px 25px 25px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.Header2__Search-BtnSearch p{
+    color: $white;
+}
+
+
+/* menu menu menu menu menu menu menu  */
+
+.Header2__Menu{
+    /* background-color: purple; */
+    width: 240px;
+}
+.Header2__Menu--Profile{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.Header2__Menu--Profile img{
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+.Header2__Menu--Profile p{
+    color: $white;
+    font-size: 20px;
+}
+
+
+.Header2__Menu ul{
+    background-color: $secundary-color;
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 240px;
+    height: 146px;
+    margin-top: 1px;
+    /* text-align: right; */
+    /* margin: 0px 0px 0px 120px; */
+}
+.Header2__Menu:hover ul, ul:hover{
+    display: block;
+}
+.Header2__Menu li{
+    height: 73px;
+    display: flex;
+    align-items: center;
+    padding-left: 31px;
+    
+
+}
+.Header2__Menu li:nth-child(1){
+    border-bottom: 1px solid $white;
+}
+.Header2__Menu li img{
+    width: 29px;
+    margin-right: 54px;
+}
+.Header2__Menu li a{
+    text-decoration: none;
+    color: $white;
+    font-size: 20px;
+    margin-right: 25px;
+
+}
+.Header2__Menu li a:hover{
+    text-decoration: underline;
+}
+
+
+
+.Header2__Profile-photo{
+    width: 62px;
+    height: 62px;
+
+}
+.Header2__Profile-photo img{
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+
+.Header2__Profile-Username a{
+    text-decoration: none;
+    color: $white;
+}
