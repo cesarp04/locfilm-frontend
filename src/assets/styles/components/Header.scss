@@ -1,29 +1,52 @@
 @import "../Vars.scss";
 
-
-.Header3{
+.Header{
     background-color: $secundary-color;
     width: 100%;
     height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
-
-.Header3__logo{
+.Header__logo{
     width: 195px;
     height: 60px;
+    margin-left: 15px;
 }
-.Header3__logo a{
+.Header__logo a{
     width: 100%;
     height: 100%;
 }
-.Header3__logo a img{
+.Header__logo a img{
     width: 100%;
     height: 100%;
+}
+
+// sss
+
+// .Header3{
+//     background-color: $secundary-color;
+//     width: 100%;
+//     height: 90px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+// }
+
+// .Header3__logo{
+//     width: 195px;
+//     height: 60px;
+// }
+// .Header3__logo a{
+//     width: 100%;
+//     height: 100%;
+// }
+// .Header3__logo a img{
+//     width: 100%;
+//     height: 100%;
     
-}
+// }
 
 // .Header3__Search{
 //     display: flex;
@@ -65,30 +88,30 @@
 // .Header3__Search-BtnSearch p{
 //     color: white;
 // }
-.Header3__SignLogin{
-    display: flex;
-    height: 20px;
-}
-.Header3__SignLogin-Sign{
-    width: 50px;
-    border-right: 2px solid white;
-    margin-right: 20px;
-    font-size: 15px;
-    color: white;
-}
-.Header3__SignLogin-Sign a{
-    margin: 0px;
-    text-decoration: none;
-    color: white;
-}
-.Header3__SignLogin-Login{
-    width: 50px;
-    margin-right: 40px;
-    font-size: 15px;
-    color: white;
-}
-.Header3__SignLogin-Login a{
-    margin: 0px;
-    text-decoration: none;
-    color: white;
-}
+// .Header3__SignLogin{
+//     display: flex;
+//     height: 20px;
+// }
+// .Header3__SignLogin-Sign{
+//     width: 50px;
+//     border-right: 2px solid white;
+//     margin-right: 20px;
+//     font-size: 15px;
+//     color: white;
+// }
+// .Header3__SignLogin-Sign a{
+//     margin: 0px;
+//     text-decoration: none;
+//     color: white;
+// }
+// .Header3__SignLogin-Login{
+//     width: 50px;
+//     margin-right: 40px;
+//     font-size: 15px;
+//     color: white;
+// }
+// .Header3__SignLogin-Login a{
+//     margin: 0px;
+//     text-decoration: none;
+//     color: white;
+// }

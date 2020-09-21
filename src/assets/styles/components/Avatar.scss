@@ -1,0 +1,79 @@
+@import "../Vars.scss";
+
+
+.Header__Menu{
+    width: 240px;
+}
+.Header__Menu--Profile{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.Header__Menu--Profile img{
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+.Header__Menu--Profile p{
+    color: white;
+    font-size: 20px;
+}
+
+
+.Header__Menu ul{
+    background-color: #161616;
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 240px;
+    height: 146px;
+    margin-top: 1px;
+}
+.Header__Menu:hover ul, ul:hover{
+    display: block;
+}
+.Header__Menu li{
+    height: 73px;
+    display: flex;
+    align-items: center;
+    padding-left: 31px;
+    
+
+}
+.Header__Menu li:nth-child(1){
+    border-bottom: 1px solid white;
+}
+.Header__Menu li img{
+    width: 29px;
+    margin-right: 54px;
+}
+.Header__Menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 25px;
+
+}
+.Header__Menu li a:hover{
+    text-decoration: underline;
+}
+
+
+
+.Header__Profile-photo{
+    width: 62px;
+    height: 62px;
+
+}
+.Header__Profile-photo img{
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+
+.Header__Profile-Username a{
+    text-decoration: none;
+    color: white;
+}
