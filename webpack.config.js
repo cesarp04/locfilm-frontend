@@ -29,8 +29,14 @@ module.exports = {
       {
         test: /\.(s*)css$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/'
+            }
+          },
           "css-loader",
+          "resolve-url-loader",
           "sass-loader",
         ],
       },
