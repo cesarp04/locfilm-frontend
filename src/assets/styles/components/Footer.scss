@@ -10,17 +10,7 @@ footer {
   height: 171px;
   background-color: $secundary-color;
 }
-.footerMain__logo {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  display: flex;
-  align-items: center;
-}
-.footerMain__logo img {
-  width: 195px;
-  height: 60px;
-  margin-left: 16px;
-}
+
 .footerMain__links {
   grid-column-start: 4;
   grid-column-end: 6;
