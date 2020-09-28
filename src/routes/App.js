@@ -1,9 +1,11 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+
+import Layout from "../components/Layout"
 import Home from "../containers/Home"
 import Login from "../containers/Login"
 import SignIn from "../containers/SignIn"
-import Layout from "../components/Layout"
+import MyReservations from "../containers/MyReservations"
 
 const App = () => (
   <BrowserRouter>
@@ -12,6 +14,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/reservations" component={MyReservations} />
       </Switch>
     </Layout>
   </BrowserRouter>
