@@ -13,8 +13,8 @@ const Header = ({ showSearch, showSignInLogin, showAvatar }) => (
             <Link href="/"><img src={logo} alt="Logo"/> </Link>
         </figure>
             {showSearch ? <SearchHeader/> : ''}
-            {showSignInLogin ? <SignInLogin /> : <Avatar/>}
-            {/* {showAvatar ? <Avatar/> : ''} */}
+            {showSignInLogin ? <SignInLogin /> : ''}
+            {showAvatar ? <Avatar/> : ''}
     </header>
 );
 

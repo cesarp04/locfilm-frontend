@@ -3,7 +3,7 @@
 .Header{
     background-color: $secundary-color;
     width: 100%;
-    height: 90px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,106 +12,34 @@
     width: 195px;
     height: 60px;
     margin-left: 15px;
+  
 }
 .Header__logo a{
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 .Header__logo a img{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    
 }
-
-// sss
-
-// .Header3{
-//     background-color: $secundary-color;
-//     width: 100%;
-//     height: 90px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-
-// }
-
-// .Header3__logo{
-//     width: 195px;
-//     height: 60px;
-// }
-// .Header3__logo a{
-//     width: 100%;
-//     height: 100%;
-// }
-// .Header3__logo a img{
-//     width: 100%;
-//     height: 100%;
+@media screen and (max-width: 480px){
     
-// }
-
-// .Header3__Search{
-//     display: flex;
-//     width: 474px;
-//     height: 35px;
-// }
-// .Header3__Search-input input{
-//     width: 275px;
-//     height: 100%;
-//     text-align: center;
-//     padding: 0;
-//     border: 0;
-//     border-radius: 25px 0px 0px 25px;
-//     background-color: rgba(255, 255, 255, .6);
+    .Header{
+        width: 100%;
+        height: 63px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     
-
-// }
-// .Header3__Search-filter{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 78px;
-//     height: 100%;
-//     background-color: rgba(255, 255, 255, .6);
-// }
-// .Header3__Search img{
-//     width: 25px;
-//     height: 25px;
-// }
-// .Header3__Search-BtnSearch{
-//     background-color: $button-color;
-//     width: 121px;
-//     border-radius: 0px 25px 25px 0px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     text-decoration: none;
-// }
-// .Header3__Search-BtnSearch p{
-//     color: white;
-// }
-// .Header3__SignLogin{
-//     display: flex;
-//     height: 20px;
-// }
-// .Header3__SignLogin-Sign{
-//     width: 50px;
-//     border-right: 2px solid white;
-//     margin-right: 20px;
-//     font-size: 15px;
-//     color: white;
-// }
-// .Header3__SignLogin-Sign a{
-//     margin: 0px;
-//     text-decoration: none;
-//     color: white;
-// }
-// .Header3__SignLogin-Login{
-//     width: 50px;
-//     margin-right: 40px;
-//     font-size: 15px;
-//     color: white;
-// }
-// .Header3__SignLogin-Login a{
-//     margin: 0px;
-//     text-decoration: none;
-//     color: white;
-// }
+    }
+    .Header__logo{
+        width: 134px;
+        height: 41px;
+    }
+    
+    
+  }
+  
