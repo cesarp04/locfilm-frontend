@@ -2,13 +2,14 @@
 
 footer {
   width: 100vw;
-  height: 200px;
-  position: relative;
+  height: 180px;
+  display: block;
+  bottom: 0;
 }
 .footerMain {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  height: 171px;
+  height: 151px;
   background-color: $secundary-color;
 }
 
@@ -37,8 +38,7 @@ footer {
   font-size: 20px;
   font-weight: 600;
 }
-.footerMain__Newsletter p:nth-child(2) {
-}
+
 .footerMain__BtnNewsletter {
   grid-column-start: 9;
   grid-column-end: 11;
