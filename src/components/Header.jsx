@@ -7,7 +7,6 @@ import Avatar from "./Avatar"
 import { Link } from "react-router-dom"
 
 const Header = ({ showSearch, showSignInLogin, showAvatar }) => (
-
   <header className="Header">
     <figure className="Header__logo">
       <Link to="/">
@@ -19,6 +18,5 @@ const Header = ({ showSearch, showSignInLogin, showAvatar }) => (
     {/* {showAvatar ? <Avatar/> : ''} */}
   </header>
 )
-);
 
 export default Header
