@@ -1,17 +1,17 @@
 @import "../Vars.scss";
 
-
-
 footer{
   width: 100vw;
-  height: 200px;
-  position: relative;
+  height: 180px;
+  display: block;
+  bottom: 0;
 }
-.footerMain{
-  display: flex;
-  justify-content: space-evenly;
-  height: 130px;
-  background-color: #161616;
+
+.footerMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 151px;
+  background-color: $secundary-color;
 }
 
 .footerMain__links{
@@ -41,13 +41,15 @@ footer{
 .footerMain__Newsletter p{
   color: white;
 }
-.footerMain__Newsletter p:nth-child(1){
-font-size: 20px;
-font-weight: 600;
 
+.footerMain__Newsletter p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.footerMain__BtnNewsletter{
+.footerMain__BtnNewsletter {
+  grid-column-start: 9;
+  grid-column-end: 11;
 
   display: flex;
   flex-direction:column;
