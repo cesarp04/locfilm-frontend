@@ -7,7 +7,7 @@ import twitterIcon from "../assets/static/i_twitter.png"
 
 const Login = () => (
   <>
-    <Header showSearch={false} />
+    <Header showSearch={false} showSignInLogin={true} />
     <main className="login">
       <section className="login__container">
         <p> Login </p>
@@ -58,6 +58,8 @@ const Login = () => (
         </div>
       </section>
     </main>
+
+    
   </>
 )
 
