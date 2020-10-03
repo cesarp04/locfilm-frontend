@@ -1,0 +1,48 @@
+@import "../Vars.scss";
+
+.container-user {
+  margin: 52px 0 52px 0;
+  display: flex;
+  justify-content: center;
+  color: $white;
+}
+
+.container-about {
+  margin: 30px 0 0 100px;
+}
+.container-about h1 {
+  margin-bottom: 50px;
+}
+
+.container-about p {
+  width: 270px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container-user {
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $white;
+  }
+  .container-about {
+    width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .container-user {
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $white;
+  }
+
+  .container-about {
+    margin: 0;
+    padding: 0;
+    width: 223px;
+  }
+
+  .container-about h1 {
+    margin-top: 0px;
+  }
+}
