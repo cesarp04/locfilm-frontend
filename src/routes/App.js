@@ -7,6 +7,7 @@ import Login from "../containers/Login"
 import SignIn from "../containers/SignIn"
 import MyReservations from "../containers/MyReservations"
 import UserEdit from "../containers/UserEdit"
+import Details from "../containers/Details"
 
 const App = () => (
   <BrowserRouter>
@@ -17,6 +18,8 @@ const App = () => (
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/reservations" component={MyReservations} />
         <Route exact path="/edit" component={UserEdit} />
+        <Route exact path="/details" component={Details} />
+
       </Layout>
     </Switch>
   </BrowserRouter>
