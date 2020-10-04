@@ -7,9 +7,9 @@ import ParkingIcon from "../assets/static/i_parking.png"
 import WC from "../assets/static/i_bath.png"
 import LivingRoom from "../assets/static/i_livingroom.png"
 import Cover from "../assets/static/cover-centlali.jpg"
-import cross1 from "../assets/static/cross1.jpg"
-import cross2 from "../assets/static/cross2.jpg"
-import cross3 from "../assets/static/cross3.jpg"
+import Cross1 from "../assets/static/cross1.jpg"
+import Cross2 from "../assets/static/cross2.jpg"
+import Cross3 from "../assets/static/cross3.jpg"
 
 
 
@@ -91,24 +91,24 @@ const Details = () => (
                 <input type="radio" id="3" name="image-slide" hidden/>
                 <div className="slide">
                     <div className="item-slide">
-                        <img src={cross1}/>
+                        <img src={Cross1}/>
                     </div>
                     <div className="item-slide">
-                        <img src={cross2}/>
+                        <img src={Cross2}/>
                     </div>
                     <div className="item-slide">
-                        <img src={cross3}/>
+                        <img src={Cross3}/>
                     </div>
                 </div>
                 <div className="pagination">
                     <label className="pagination-item" for="1">
-                        <img src={cross1}/>
+                        <img src={Cross1}/>
                     </label>
                     <label className="pagination-item" for="2">
-                        <img src={cross2}/>
+                        <img src={Cross2}/>
                     </label>
                     <label className="pagination-item" for="3">
-                        <img src={cross3}/>
+                        <img src={Cross3}/>
                     </label>
                 </div>
             </div>            

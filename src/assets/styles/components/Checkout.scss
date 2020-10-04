@@ -1,0 +1,441 @@
+@import "../Vars.scss";
+
+
+.container{
+    width: 100vw;
+    color: $white;
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+}
+.container>h2{
+    color: $white;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 400;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+
+}
+.container__imgDate{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.container__imgDate--img{
+    grid-column-start: 3;
+    grid-column-end: 8;
+}
+.container__imgDate--img>img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.container__imgData__data{
+    grid-column-start: 8;
+    grid-column-end: 12;
+    margin-left: 30px;
+}
+
+.container__imgData__data>h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.container__imgData__data--CheckIn{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.container__imgData__data--CheckIn>p{
+    font-size: 18px;
+}
+
+.container__imgData__data--CheckOut{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.container__imgData__data--CheckOut>p{
+    font-size: 18px;
+
+}
+.container__imgData__data--ChangeDates{
+    width: 198px;
+    height: 38px;
+    border: 1px solid $white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.container__imgData__data--ChangeDates>a{
+    text-decoration: none;
+    color: $white;
+}
+.container__ticketPayMethood{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 99px;
+    font-size: 18px;
+
+}
+.container__ticketPayMethood__Ticket{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    margin-left: 20px;
+}
+.container__ticketPayMethood__Ticket__LocationPrice{
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+    margin-bottom: 10px;
+}
+.container__ticketPayMethood__Ticket__Taxs{
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+    margin-bottom: 10px;
+
+}
+.container__ticketPayMethood__Ticket__Total{
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+}
+.container__ticketPayMethood_PayMethood{
+    grid-column-start: 8;
+    grid-column-end: 11;
+}
+.container__ticketPayMethood_PayMethood>h2{
+    font-weight: 600;
+}
+.container__ticketPayMethood_PayMethood--SPEI{
+    margin-top: 5px;
+}
+
+.container__ticketPayMethood_PayMethood--SPEI{
+    margin-bottom: 5px;
+}
+.container__ticketPayMethood_PayMethood--SPEI>label{
+    margin-left: 15px;
+    font-size: 20px;
+}
+.container__ticketPayMethood_PayMethood--CeditCard{
+    margin-bottom: 5px;
+}
+.container__ticketPayMethood_PayMethood--CeditCard>label{
+    margin-left: 15px;
+    font-size: 20px;
+}
+.container__ticketPayMethood_PayMethood--Terms{
+    margin-bottom: 20px;
+}
+.container__ticketPayMethood_PayMethood--Terms>label{
+    margin-left: 15px;
+    font-size: 20px;
+}
+.container__ticketPayMethood_PayMethood--btn{
+    text-decoration: none;
+    color: $white;
+    width: 200px;
+    height: 33px;
+    border: 1px solid $white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $button-color;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 834px){
+    .container__imgDate{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+    }
+    .container__imgDate--img{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100vw;
+    }
+    .container__imgDate--img>img{
+        border-radius: 0;
+    }
+    .container__imgData__data{
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-left: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+
+    }
+    .container__imgData__data>h2{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        text-align: center;
+    }
+    .container__imgData__data--CheckIn{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container__imgData__data--CheckIn>p{
+        font-size: 22px;
+    }
+    .container__imgData__data--CheckOut{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container__imgData__data--CheckOut>p{
+        font-size: 22px;
+    }
+    .container__imgData__data--ChangeDates{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        width: 150px;
+        margin-top: 50px;
+    }
+
+    .container__ticketPayMethood{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    .container__ticketPayMethood__Ticket{
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin: 0;
+        margin-bottom: 59px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+    .container__ticketPayMethood__Ticket__LocationPrice{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+    }
+    .container__ticketPayMethood__Ticket__Taxs{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+    }
+    .container__ticketPayMethood__Ticket__Total{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: 600;
+        color: $button-color ;
+    }
+    .container__ticketPayMethood_PayMethood{
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+    .container__ticketPayMethood_PayMethood>h2{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .container__ticketPayMethood_PayMethood--SPEI{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 25px;
+        margin-left: 10px;       
+    }
+    .container__ticketPayMethood_PayMethood--SPEI>label{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .container__ticketPayMethood_PayMethood--CeditCard{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin-left: 10px;
+    }
+    .container__ticketPayMethood_PayMethood--CeditCar>label{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .container__ticketPayMethood_PayMethood--Terms{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-left: 10px;
+    }
+    .container__ticketPayMethood_PayMethood--Terms>label{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .container__ticketPayMethood_PayMethood--btn{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-left: 10px;
+        width: 180px;
+    }
+}
+@media screen and (max-width: 425px){
+  
+    .container{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+    }  
+    .container>h2{
+        display: none;
+    }
+    .container__imgDate{
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+    }
+    .container__imgDate--img{
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .container__imgData__data{
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin: 0;
+        padding: 10px;
+        display: grid;
+// ooojjooo
+    }
+    .container__imgData__data>h2{
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+
+    .container__ticketPayMethood{
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, auto);
+        margin: 0;
+    }
+    .container__ticketPayMethood__Ticket{
+        grid-column-start: 1;
+        grid-column-end: 6; 
+        grid-row-start: 1;
+        grid-row-end: 2;
+      margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3,auto);
+    }
+    .container__ticketPayMethood__Ticket__LocationPrice{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3,auto);
+        display: flex;
+        justify-content: space-between;
+    }
+    .container__ticketPayMethood__Ticket__LocationPrice>p{
+        font-size: 20px;
+    }
+    .container__ticketPayMethood__Ticket__Taxs{
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+    }
+    .container__ticketPayMethood__Ticket__Taxs>p{
+        font-size: 20px;
+    }
+    .container__ticketPayMethood__Ticket__Total{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .container__ticketPayMethood__Ticket__Total>p{
+        font-size: 20px;
+
+    }
+
+
+}
