@@ -8,6 +8,7 @@ import SignIn from "../containers/SignIn"
 import MyReservations from "../containers/MyReservations"
 import UserEdit from "../containers/UserEdit"
 import Details from "../containers/Details"
+import Checkout from "../containers/Checkout"
 import UserProfile from "../containers/UserProfile"
 
 
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/edit" component={UserEdit} />
         <Route exact path="/details" component={Details} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/user" component={UserProfile} />
         <Route exact path="/reservations" component={MyReservations} />
       </Layout>
