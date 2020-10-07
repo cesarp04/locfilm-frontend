@@ -21,6 +21,7 @@
   "homepage": "https://github.com/locfilm/locfilm-frontend#readme",
   "dependencies": {
     "react": "^16.13.1",
+    "react-datepicker": "^3.2.2",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
   },
