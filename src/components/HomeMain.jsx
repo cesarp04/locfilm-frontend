@@ -19,7 +19,11 @@ const HomeMain = () => {
     }
 
     // 
-
+    const [showFilterModal, setShowFilterModal] = useState(false)
+    function changeModalVisibility () {
+        setShowFilterModal (!showFilterModal)
+        console.log(showFilterModal)
+    }
 
     return(
     <main className="containerHome">
@@ -28,14 +32,15 @@ const HomeMain = () => {
                 <input type="text" placeholder="You Locations"/>
             </div>
             <div className="ContainerHome__SearchHome--filter">
-                <a href="#"><img src={filter} alt=""/></a>
+                <a href="#"><img src={filter} alt="icon_Filter" onClick={changeModalVisibility}/></a>
             </div>
             <a href="#" className="ContainerHome__SearchHome--BtnSearch">
                 Search
             </a>
         </section>
-        <section className="containerHome__FilterCard">
-             <div className="containerHome__FilterCard__container">
+        { showFilterModal ? 
+         <section className="containerHome__FilterCard">
+            <div className="containerHome__FilterCard__container">
                 <p className="containerHome__FilterCard__container--title">
                     Filter
                 </p>
@@ -61,9 +66,9 @@ const HomeMain = () => {
                 <div className="ContainerHome__SearchHome__filter-card--btn">
                     <a href="#" className="">Send</a>
                 </div>
-                
             </div>
-        </section>
+        </section> : null }
+       
         
     </main>
     )
