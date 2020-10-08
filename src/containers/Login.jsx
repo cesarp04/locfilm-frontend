@@ -1,66 +1,73 @@
-import React from "react"
-import "../assets/styles/components/Login.scss"
+import React, { useState } from "react"
+import { connect } from "react-redux"
+import { loginUser } from "../actions/usersActions"
+import { useHistory } from "react-router-dom"
 
 import Header from "../components/Header"
-import googleIcon from "../assets/static/i_google.png"
-import twitterIcon from "../assets/static/i_twitter.png"
+import "../assets/styles/components/Login.scss"
 
-const Login = () => (
-  <>
-    <Header showSearch={false} showSignInLogin={true} />
-    <main className="login">
-      <section className="login__container">
-        <p> Login </p>
-        <form className="login__container__from">
-          <input
-            type="text"
-            className="login__container__form--input"
-            placeholder="Your email"
-          />
-          <input
-            type="password  "
-            className="login__container__form--input"
-            placeholder="Your Password"
-          />
-          <button className="login__container__form--btn">Login</button>
-          <div className="login__container__remember-me">
-            <label>
-              <input
-                type="radio"
-                name=""
-                className="cbox1"
-                id="cbox1"
-                value="checkbos"
-              />{" "}
-              Remember me
-            </label>
-            <a href="#">Forgot Password</a>
-          </div>
-        </form>
-        <section className="login__container__SM">
-          <div>
-            <a href="#">
-              <img src={googleIcon} alt="Google" />
-              Login with Google
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <img src={twitterIcon} alt="Twitter" />
-              Login with Twitter
-            </a>
+const Login = (props) => {
+  let history = useHistory()
+  const [form, setValues] = useState({
+    email: "",
+    id: "",
+  })
+
+  const updateInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    })
+  }
+  const handleLogin = (event) => {
+    event.preventDefault()
+    props.loginUser(form)
+    history.push("/")
+  }
+
+  return (
+    <>
+      <Header showSearch={false} showSignInLogin={true} />
+      <main className="login">
+        <section className="login__container">
+          <p> Login </p>
+          <form className="login__container__from" onSubmit={handleLogin}>
+            <input
+              type="text"
+              className="login__container__form--input"
+              name="email"
+              placeholder="Your email"
+              autoComplete="off"
+              onChange={updateInput}
+            />
+            <input
+              type="password"
+              className="login__container__form--input"
+              name="password"
+              placeholder="Your Password"
+              onChange={updateInput}
+            />
+            <button type="submit" className="login__container__form--btn">
+              Login
+            </button>
+            <div className="login__container__remember-me">
+              <a href="#">Forgot Password</a>
+            </div>
+          </form>
+          <div className="login__container__register">
+            <p>
+              You dont have any account. <a href="#">Register</a>
+            </p>
           </div>
         </section>
-        <div className="login__container__register">
-          <p>
-            You dont have any account. <a href="#">Register</a>
-          </p>
-        </div>
-      </section>
-    </main>
+      </main>
+    </>
+  )
+}
+// const mapStateToProps = (state) => ({ data: state.data })
 
-    
-  </>
-)
+const mapDispatchToProps = {
+  loginUser,
+}
 
-export default Login
+export default connect(null, mapDispatchToProps)(Login)

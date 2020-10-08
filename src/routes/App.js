@@ -10,7 +10,7 @@ import UserEdit from "../containers/UserEdit"
 import Details from "../containers/Details"
 import Checkout from "../containers/Checkout"
 import UserProfile from "../containers/UserProfile"
-
+import Register from "../components/Register"
 
 const App = () => (
   <BrowserRouter>
@@ -23,6 +23,7 @@ const App = () => (
         <Route exact path="/details" component={Details} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/user" component={UserProfile} />
+        <Route exact path="/register" component={Register} />
         <Route exact path="/reservations" component={MyReservations} />
       </Layout>
     </Switch>
