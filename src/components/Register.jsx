@@ -4,6 +4,8 @@ import { registerUser, setError } from "../actions/usersActions"
 import { useDispatch, useSelector } from "react-redux"
 import validator from "validator"
 import "../assets/styles/components/Register.scss"
+import Header from "../components/Header"
+
 
 const Register = () => {
   const dispatch = useDispatch()
@@ -76,6 +78,7 @@ const Register = () => {
 
   return (
     <>
+    <Header showSearch={false} showSignInLogin={true} />
     <div className="container__Chiff">
       <div className="container__auth__title">
         
@@ -88,7 +91,7 @@ const Register = () => {
               <input
                 type="text"
                 name="username"
-                className="login__container__form--input2"
+                className="input_register1"
                 autoComplete="off"
                 placeholder="username"
                 value={username}
@@ -98,7 +101,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="first_name"
-                  className="login__container__form--input"
+                  className="input_register"
                   autoComplete="off"
                   placeholder="first name"
                   onChange={updateInput}
@@ -106,7 +109,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="last_name"
-                  className="login__container__form--input"
+                  className="input_register"
                   autoComplete="off"
                   placeholder="last name"
                   onChange={updateInput}
@@ -116,7 +119,7 @@ const Register = () => {
               <input
                 type="text"
                 name="email"
-                className="login__container__form--input"
+                className="input_register"
                 autoComplete="off"
                 placeholder="Email"
                 value={email}
@@ -125,7 +128,7 @@ const Register = () => {
               <input
                 type="password"
                 name="password"
-                className="login__container__form--input"
+                className="input_register"
                 placeholder="Password"
                 value={password}
                 onChange={updateInput}
@@ -133,7 +136,7 @@ const Register = () => {
               <input
                 type="password"
                 name="password2"
-                className="login__container__form--input"
+                className="input_register"
                 placeholder="Confirm password"
                 value={password2}
                 onChange={updateInput}
@@ -141,7 +144,7 @@ const Register = () => {
               <input
                 type="text"
                 name="phone"
-                className="login__container__form--input"
+                className="input_register"
                 autoComplete="off"
                 placeholder="phone"
                 value={phone}
@@ -151,7 +154,7 @@ const Register = () => {
               <input
                 type="text"
                 name="address"
-                className="login__container__form--input"
+                className="input_register"
                 autoComplete="off"
                 placeholder="address"
                 onChange={updateInput}
@@ -165,7 +168,7 @@ const Register = () => {
                 autoComplete="off"
                 onChange={updateInput}
               /> */}
-              <button type="submit" className="btn btn-primary btn-block mb-5">
+              <button type="submit" className="btn-register">
                 Register
               </button>
               {/* <Link to="" className="link">
