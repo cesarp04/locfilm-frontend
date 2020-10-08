@@ -4,5 +4,9 @@
   margin: 0;
 }
 body {
+  font-family: $theme-font;
   background-color: $primary-color;
+}
+.App {
+  height: 100vh;
 }

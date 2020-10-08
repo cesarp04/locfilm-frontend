@@ -1,0 +1,30 @@
+@import "../Vars.scss";
+
+
+.Header__SignLogin{
+    display: flex;
+    height: 20px;
+}
+.Header__SignLogin-Sign{
+    width: 50px;
+    border-right: 2px solid white;
+    margin-right: 20px;
+    font-size: 15px;
+    color: white;
+}
+.Header__SignLogin-Sign a{
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+}
+.Header__SignLogin-Login{
+    width: 50px;
+    margin-right: 40px;
+    font-size: 15px;
+    color: white;
+}
+.Header__SignLogin-Login a{
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+}

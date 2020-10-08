@@ -1,0 +1,40 @@
+@import "../Vars.scss";
+
+.Header__Search{
+    display: flex;
+    width: 474px;
+    height: 35px;
+}
+.Header__Search-input input{
+    width: 275px;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    border-radius: 25px 0px 0px 25px;
+    background-color: rgba(255, 255, 255, .6);
+}
+.Header__Search-filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+.Header__Search img{
+    width: 25px;
+    height: 25px;
+}
+.Header__Search-BtnSearch{
+    background-color: $button-color;
+    width: 121px;
+    border-radius: 0px 25px 25px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.Header__Search-BtnSearch p{
+    color: white;
+}
