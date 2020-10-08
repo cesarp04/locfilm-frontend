@@ -1,0 +1,44 @@
+@import "../Vars.scss";
+
+.container__Chiff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+
+}
+.container__auth__title--auth__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    width: 300px;
+  
+}
+.container__auth__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 20px;
+
+}
+
+.auth__title{
+    background-color: salmon;
+}
+
+.form-register{
+    background-color: palevioletred;
+    
+}
+.login__container__form--input{
+    margin: 0;
+}
+.login__container__form--input2{
+    background-color: purple;
+}
