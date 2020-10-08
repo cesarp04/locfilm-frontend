@@ -1,0 +1,89 @@
+@import "../Vars.scss";
+
+.container__Chiff{
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container__auth__title--auth__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+  
+}
+.container__auth__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 20px;
+
+}
+
+.auth__title{
+    color: white;
+    font-size: 30px;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 90%;    
+}
+.login__container__form--input{
+    margin: 0;
+}
+.input_register1{
+    background-color: $primary-color;
+    border: none;
+    text-align: center;
+    height: 25px;
+    border: 1px solid $white;
+    border-radius: 20px;
+    width: 80%;
+}
+.block2{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.block2>input{
+    background-color: $primary-color;
+    border: none;
+    border: 1px solid $white;
+    border-radius: 20px;
+    text-align: center;
+    width: 45%;
+    height: 25px;
+}
+.input_register{
+    background-color: $primary-color;
+    border: none;
+    text-align: center;
+    height: 25px;
+    border: 1px solid $white;
+    border-radius: 20px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.btn-register{
+    background-color: $button-color;
+    color: $white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 140px;
+    height: 35px;
+    border: none;
+    border: 1px solid $white;
+    border-radius: 20px;
+}
