@@ -1,5 +1,24 @@
 @import "../Vars.scss";
 
+.main-Search-Results__head{
+    width: 100%;
+    height: 150px;
+    /* background-color: goldenrod; */
+}
+.main-Search-Results__head-title{
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-Search-Results__head-title h3{
+    color: #627DFA;
+    font-size: 55px;
+    line-height: 80%;
+    margin-left: 9%;
+}
+
 .carousel{
     width: 100vw;
     padding-left: 25px;
