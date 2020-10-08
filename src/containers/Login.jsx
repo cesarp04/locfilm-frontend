@@ -44,7 +44,7 @@ const Login = (props) => {
               type="password"
               className="login__container__form--input"
               name="password"
-              placeholder="Your Password"
+              placeholder="Your password"
               onChange={updateInput}
             />
             <button type="submit" className="login__container__form--btn">

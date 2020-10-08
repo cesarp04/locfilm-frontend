@@ -54,7 +54,7 @@
   width: 258px;
   height: 38px;
   border-radius: 20px;
-  background-color: #627dfa;
+  background-color: $button-color;
   color: white;
   text-align: center;
   margin-top: 27px;
@@ -75,9 +75,12 @@
 .login__container__remember-me a {
   text-decoration: none;
   color: white;
+  text-decoration: underline ;
+
 }
 .login__container__remember-me a:hover {
-  text-decoration: underline;
+  text-decoration: underline $button-color;
+  color: $button-color;
 }
 .login__container__SM {
   display: flex;
@@ -108,12 +111,13 @@
   text-decoration: none;
   color: white;
   font-weight: 600;
+  text-decoration: underline $white
+
 }
 
 .login__container__register p a:hover {
-  text-decoration: underline;
-  color: tomato;
-  background-color: turquoise;
+  text-decoration: underline $button-color;
+  color: $button-color;
 }
 
 @media screen and (max-width: 480px) {

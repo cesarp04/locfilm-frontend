@@ -31,6 +31,15 @@
   background-color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
+.ContainerHome__SearchHome--input input:focus{
+  border-radius: 25px 0px 0px 25px;
+  outline-offset: -1px;
+  outline: none;
+  color: white;
+ }
+ .ContainerHome__SearchHome--input input::placeholder{
+   color: #6b6b6b;
+ }
 .ContainerHome__SearchHome--filter {
   width: 13.2%;
   height: 100%;
