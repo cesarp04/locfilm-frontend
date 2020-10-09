@@ -1,4 +1,8 @@
-import { LOGIN_USER, USERS_ERROR, ERROR } from "../types/userTypes"
+import {
+  REGISTER_REQUEST,
+  REMOVE_ERROR_REGISTER,
+  ERROR_REGISTER,
+} from "../types/userTypes"
 import {
   IDLE_STATUS,
   LOADING_STATUS,
@@ -6,32 +10,31 @@ import {
   FAILURE_STATUS,
 } from "../types/states"
 
-const users = {
+const reg = {
   status: IDLE_STATUS,
-  user: {},
+  data: {},
   error: null,
 }
 
-export const userReducer = (state = users, action) => {
+export const registerReducer = (state = reg, action) => {
   switch (action.type) {
-    case LOGIN_USER:
+    case REGISTER_REQUEST:
       return {
         ...state,
-        user: action.payload,
-        data: {},
+        data: action.payload,
         status: SUCCESS_STATUS,
       }
-    case USERS_ERROR:
+    case REMOVE_ERROR_REGISTER:
       return {
         ...state,
-        error: action.payload,
-        status: FAILURE_STATUS,
+        status: IDLE_STATUS,
+        error: null,
       }
-    case ERROR:
+    case ERROR_REGISTER:
       return {
         ...state,
-        error: action.payload,
         status: FAILURE_STATUS,
+        error: action.payload,
       }
     default:
       return state

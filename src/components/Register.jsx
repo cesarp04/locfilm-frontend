@@ -1,6 +1,9 @@
 import React, { useState } from "react"
-// import { connect } from "react-redux"
-import { registerUser, setError } from "../actions/usersActions"
+import {
+  registerUser,
+  setErrorRegister,
+  removeErrorRegister,
+} from "../actions/registerActions"
 import { useDispatch, useSelector } from "react-redux"
 import validator from "validator"
 import "../assets/styles/components/Register.scss"
@@ -8,7 +11,7 @@ import Header from "../components/Header"
 
 const Register = () => {
   const dispatch = useDispatch()
-  const { error } = useSelector((state) => state.initialState)
+  const { error } = useSelector((state) => state.reg)
 
   const [form, setValues] = useState({
     username: "",
@@ -35,28 +38,31 @@ const Register = () => {
   }
   const isFormValid = () => {
     if (username.trim().length === 0) {
-      dispatch(setError("Username is required"))
+      dispatch(setErrorRegister("Username is required"))
       return false
     } else if (username.trim().length <= 1) {
-      dispatch(setError("User must have a minimum of 2 characters"))
+      dispatch(setErrorRegister("User must have a minimum of 2 characters"))
       return false
     } else if (!validator.isEmail(email)) {
-      dispatch(setError("Email is not valid"))
+      dispatch(setErrorRegister("Email is not valid"))
       return false
     } else if (password !== password2 || password.length < 8) {
       dispatch(
-        setError(
+        setErrorRegister(
           "Password should be at least 9 characters and match each other"
         )
       )
       return false
     } else if (phone.length === 0) {
-      dispatch(setError("Phone is required"))
+      dispatch(setErrorRegister("Phone is required"))
       return false
     } else if (phone.length < 6) {
-      dispatch(setError("the phone must have a minimum of 7 characters"))
+      dispatch(
+        setErrorRegister("the phone must have a minimum of 7 characters")
+      )
       return false
     }
+    removeErrorRegister()
     return true
   }
 

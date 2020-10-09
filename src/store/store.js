@@ -1,5 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux"
 import thunk from "redux-thunk"
+
+import { registerReducer } from "../reducers/registerReducer"
 import { userReducer } from "../reducers/userReducers"
 
 const composeEnhancers =
@@ -8,12 +10,12 @@ const composeEnhancers =
   compose
 
 const reducers = combineReducers({
-  initialState: userReducer,
+  users: userReducer,
+  reg: registerReducer,
 })
-
-const middleware = [thunk]
 
 export const store = createStore(
   reducers,
-  composeEnhancers(applyMiddleware(...middleware))
+  {},
+  composeEnhancers(applyMiddleware(thunk))
 )
