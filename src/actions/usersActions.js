@@ -81,12 +81,7 @@ export const setError = (err) => {
     payload: err,
   }
 }
-export const setErrorServer = (err) => {
-  return {
-    type: ERROR,
-    payload: err,
-  }
-}
+
 export const removeError = () => {
   return {
     type: REMOVE_ERROR,

@@ -6,7 +6,6 @@ import validator from "validator"
 import "../assets/styles/components/Register.scss"
 import Header from "../components/Header"
 
-
 const Register = () => {
   const dispatch = useDispatch()
   const { error } = useSelector((state) => state.initialState)
@@ -65,7 +64,7 @@ const Register = () => {
     if (typeof error === "string") {
       return error
     } else if (typeof error === "object") {
-      const { username, email, password } = error
+      const { username, email, password } = error.data
       if (username) {
         return username
       } else if (email) {
@@ -78,89 +77,88 @@ const Register = () => {
 
   return (
     <>
-    <Header showSearch={false} showSignInLogin={true} />
-    <div className="container__Chiff">
-      <div className="container__auth__title">
-        
-        <div className="container__auth__title--auth__title">
-          <h3 className="auth__title">Register</h3>
-        </div>
+      <Header showSearch={false} showSignInLogin={true} />
+      <div className="container__Chiff">
+        <div className="container__auth__title">
+          <div className="container__auth__title--auth__title">
+            <h3 className="auth__title">Register</h3>
+          </div>
 
           <form className="form-register" onSubmit={handleRegister}>
-              {error && <div className="auth__alert-error">{mostrar(error)}</div>}
+            {error && <div className="auth__alert-error">{mostrar(error)}</div>}
+            <input
+              type="text"
+              name="username"
+              className="input_register1"
+              autoComplete="off"
+              placeholder="username"
+              value={username}
+              onChange={updateInput}
+            />
+            <div className="block2">
               <input
                 type="text"
-                name="username"
-                className="input_register1"
-                autoComplete="off"
-                placeholder="username"
-                value={username}
-                onChange={updateInput}
-              />
-              <div className="block2">
-                <input
-                  type="text"
-                  name="first_name"
-                  className="input_register"
-                  autoComplete="off"
-                  placeholder="first name"
-                  onChange={updateInput}
-                />
-                <input
-                  type="text"
-                  name="last_name"
-                  className="input_register"
-                  autoComplete="off"
-                  placeholder="last name"
-                  onChange={updateInput}
-                />
-              </div>
-              
-              <input
-                type="text"
-                name="email"
+                name="first_name"
                 className="input_register"
                 autoComplete="off"
-                placeholder="Email"
-                value={email}
-                onChange={updateInput}
-              />
-              <input
-                type="password"
-                name="password"
-                className="input_register"
-                placeholder="Password"
-                value={password}
-                onChange={updateInput}
-              />
-              <input
-                type="password"
-                name="password2"
-                className="input_register"
-                placeholder="Confirm password"
-                value={password2}
+                placeholder="first name"
                 onChange={updateInput}
               />
               <input
                 type="text"
-                name="phone"
+                name="last_name"
                 className="input_register"
                 autoComplete="off"
-                placeholder="phone"
-                value={phone}
+                placeholder="last name"
                 onChange={updateInput}
               />
+            </div>
 
-              <input
-                type="text"
-                name="address"
-                className="input_register"
-                autoComplete="off"
-                placeholder="address"
-                onChange={updateInput}
-              />
-              {/* {meta.error && meta.touched && <span>{meta.error}</span>} */}
-              {/* <input
+            <input
+              type="text"
+              name="email"
+              className="input_register"
+              autoComplete="off"
+              placeholder="Email"
+              value={email}
+              onChange={updateInput}
+            />
+            <input
+              type="password"
+              name="password"
+              className="input_register"
+              placeholder="Password"
+              value={password}
+              onChange={updateInput}
+            />
+            <input
+              type="password"
+              name="password2"
+              className="input_register"
+              placeholder="Confirm password"
+              value={password2}
+              onChange={updateInput}
+            />
+            <input
+              type="text"
+              name="phone"
+              className="input_register"
+              autoComplete="off"
+              placeholder="phone"
+              value={phone}
+              onChange={updateInput}
+            />
+
+            <input
+              type="text"
+              name="address"
+              className="input_register"
+              autoComplete="off"
+              placeholder="address"
+              onChange={updateInput}
+            />
+            {/* {meta.error && meta.touched && <span>{meta.error}</span>} */}
+            {/* <input
                 type="image"
                 placeholder="Name"
                 name="picture"
@@ -168,19 +166,15 @@ const Register = () => {
                 autoComplete="off"
                 onChange={updateInput}
               /> */}
-              <button type="submit" className="btn-register">
-                Register
-              </button>
-              {/* <Link to="" className="link">
+            <button type="submit" className="btn-register">
+              Register
+            </button>
+            {/* <Link to="" className="link">
                 Already registered?
               </Link> */}
-            </form>
-          
+          </form>
+        </div>
       </div>
-    </div>
-    
-  
-     
     </>
   )
 }
