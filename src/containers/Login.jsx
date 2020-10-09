@@ -30,7 +30,7 @@ const Login = (props) => {
       <Header showSearch={false} showSignInLogin={true} />
       <main className="login">
         <section className="login__container">
-          <p> Login </p>
+          <p className="login__container-p"> Login </p>
           <form className="login__container__from" onSubmit={handleLogin}>
             <input
               type="text"
@@ -55,7 +55,7 @@ const Login = (props) => {
             </div>
           </form>
           <div className="login__container__register">
-            <p>
+            <p className="login__container__register-p">
               You dont have any account. <a href="#">Register</a>
             </p>
           </div>

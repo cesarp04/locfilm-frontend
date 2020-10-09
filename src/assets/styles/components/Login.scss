@@ -18,17 +18,21 @@
   flex-direction: column;
   align-items: center;
   width: 353px;
-  height: 546px;
+  height: 446px;
   border: 2px solid white;
   border-radius: 25px;
 }
+.login__container-p{
+  margin: 0;
+}
+
 .login__container p {
   font-weight: 400;
   font-size: 30px;
   text-align: center;
-  margin-top: 52px;
   padding: 0;
 }
+
 .login__container__from {
   display: flex;
   align-items: center;
@@ -43,6 +47,14 @@
   text-align: center;
   border: 1px solid white;
   color: $white;
+}
+.login__container__form--input::placeholder{
+  color: #6b6b6b;
+}
+.login__container__form--input:focus{
+  outline: none;
+  border: 1px solid $button-color;
+
 }
 .login__container__form--input:nth-child(1) {
   margin-top: 42px;
@@ -59,6 +71,8 @@
   text-align: center;
   margin-top: 27px;
   border: none;
+  outline: none;
+  cursor: pointer;
 }
 .login__container__remember-me {
   width: 248px;
@@ -107,6 +121,7 @@
 .login__container__register p {
   font-size: 12px;
 }
+
 .login__container__register p a {
   text-decoration: none;
   color: white;
@@ -118,6 +133,9 @@
 .login__container__register p a:hover {
   text-decoration: underline $button-color;
   color: $button-color;
+}
+.login__container__register-p{
+  margin-top: 32px;
 }
 
 @media screen and (max-width: 480px) {
