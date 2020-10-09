@@ -11,6 +11,7 @@ import Details from "../containers/Details"
 import Checkout from "../containers/Checkout"
 import UserProfile from "../containers/UserProfile"
 import Register from "../components/Register"
+import SearchResults from "../containers/SearchResults"
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +19,7 @@ const App = () => (
       <Layout>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/results" component={SearchResults} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/edit" component={UserEdit} />
         <Route exact path="/details" component={Details} />
