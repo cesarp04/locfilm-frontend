@@ -6,24 +6,24 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 
 const HomeMain = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    function testStart (fecha){
-        console.log(fecha)
-        setStartDate(fecha)
-    }
+        const [startDate, setStartDate] = useState(new Date());
+        function testStart (fecha){
+            console.log(fecha)
+            setStartDate(fecha)
+        }
 
-    const [endDate, setendDate] = useState(new Date());
-    function testEnd (fecha){
-        console.log(fecha)
-        setendDate(fecha)
-    }
+        const [endDate, setendDate] = useState(new Date());
+        function testEnd (fecha){
+            console.log(fecha)
+            setendDate(fecha)
+        }
 
-    // 
-    const [showFilterModal, setShowFilterModal] = useState(false)
-    function changeModalVisibility () {
-        setShowFilterModal (!showFilterModal)
-        console.log(showFilterModal)
-    }
+        // 
+        const [showFilterModal, setShowFilterModal] = useState(false)
+        function changeModalVisibility () {
+            setShowFilterModal (!showFilterModal)
+            console.log(showFilterModal)
+        }
 
     return(
     <main className="containerHome">

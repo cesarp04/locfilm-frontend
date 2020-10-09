@@ -59,6 +59,10 @@ footer {
   border-radius: 25px;
   background-color: black;
   margin-bottom: 7px;
+  color: white;
+}
+.footerMain__BtnNewsletter input:focus{
+  outline: none;
 }
 ::placeholder {
   color: white;
