@@ -60,6 +60,7 @@
     width: 340px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 70px;
 }
 
@@ -71,11 +72,29 @@
     width: 340px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
 }
 
 .container__imgData__data--CheckOut>p{
     font-size: 18px;
+
+}
+.Container__datesAndSlider__dates--choose--datePickerCheckout{
+    text-decoration: none;
+    color: $button-color;
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: #202020;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.Container__datesAndSlider__dates--choose--datePickerCheckout:hover{
+    background-color: $button-color;
+    color: $white;
+    cursor: pointer;
 
 }
 .container__imgData__data--ChangeDates{
