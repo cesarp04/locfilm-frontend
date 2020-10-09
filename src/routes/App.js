@@ -7,11 +7,11 @@ import Login from "../containers/Login"
 import SignIn from "../containers/SignIn"
 import MyReservations from "../containers/MyReservations"
 import UserEdit from "../containers/UserEdit"
-import Details from "../containers/Details"
 import Checkout from "../containers/Checkout"
 import UserProfile from "../containers/UserProfile"
 import Register from "../components/Register"
 import SearchResults from "../containers/SearchResults"
+import Details from  "../containers/Details"
 
 const App = () => (
   <BrowserRouter>

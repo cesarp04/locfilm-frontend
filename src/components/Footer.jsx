@@ -13,7 +13,7 @@ const Footer = () => (
           <p>Sign up for the newsletter</p>
         </div>
         <div className="footerMain__BtnNewsletter">
-          <input type="text" placeholder="Your Email" />
+          <input className="footerMain__BtnNewsletter--input" type="text" placeholder="Your Email" />
           <a href="#">Sucribe</a>
         </div>
       </div>

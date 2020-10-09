@@ -30,6 +30,7 @@
   border-radius: 25px 0px 0px 25px;
   background-color: rgba(255, 255, 255, 0.6);
   margin: 0;
+  color: $white;
 }
 .ContainerHome__SearchHome--input input:focus{
   border-radius: 25px 0px 0px 25px;
@@ -94,7 +95,7 @@
 }
 .containerHome__FilterCard__container--selected-city{
   margin-top: 15px;
-  width: 75%;
+  width: 70%;
   display: flex;
   justify-content: center
 
@@ -106,7 +107,11 @@
   border: none;
   width: 100%;
   border-bottom: 1px solid $white;
+  color: $white;
   
+}
+.containerHome__FilterCard__container--selected-city>input:focus{
+  outline: none;
 }
 
 .ContainerHome__SearchHome__filter-card--Dates{
