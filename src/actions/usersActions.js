@@ -1,5 +1,11 @@
 import axios from "axios"
-import { LOGIN_USER, REMOVE_ERROR_USER, USERS_ERROR } from "../types/userTypes"
+import {
+  LOGIN_USER,
+  REMOVE_ERROR_USER,
+  REQUEST_USER,
+  REQUEST_USER_ERROR,
+  USERS_ERROR,
+} from "../types/userTypes"
 
 export const loginUser = ({ email, password }) => {
   return (dispatch) => {
@@ -22,6 +28,22 @@ export const loginUser = ({ email, password }) => {
       })
   }
 }
+export const getUser = () => {
+  const id = localStorage.getItem("id")
+  return (dispatch) => {
+    axios({
+      url: `http://45.56.74.146:8000/users/${id}/`,
+      method: "get",
+      headers: { "content-type": "application/json" },
+    })
+      .then(({ data }) => {
+        dispatch(requestUser(data))
+      })
+      .catch((err) => {
+        dispatch(setRequestError(err.response))
+      })
+  }
+}
 
 export const login = (payload) => {
   return {
@@ -32,6 +54,18 @@ export const login = (payload) => {
 export const setError = (err) => {
   return {
     type: USERS_ERROR,
+    payload: err,
+  }
+}
+export const requestUser = (payload) => {
+  return {
+    type: REQUEST_USER,
+    payload,
+  }
+}
+export const setRequestError = (err) => {
+  return {
+    type: REQUEST_USER_ERROR,
     payload: err,
   }
 }
