@@ -48,12 +48,12 @@ const HomeMain = () => {
                     <input type="text" placeholder="Your City"/>
                 </div>
                 <div className="ContainerHome__SearchHome__filter-card--Dates">
-                    <DatePicker className="lala" selected={startDate} onChange={date => testStart(date)}
+                    <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={startDate} onChange={date => testStart(date)}
                         selectsStart
                         startDate={startDate}
                         endDate={endDate} 
                         />
-                    <DatePicker className="lala" selected={endDate} onChange={date => testEnd(date)}
+                    <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={endDate} onChange={date => testEnd(date)}
                         selectsEnd
                         startDate={startDate}
                         endDate={endDate}
