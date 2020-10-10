@@ -14,8 +14,9 @@ import Cross3 from "../assets/static/cross3.jpg"
 
 
 
-const DetailsMain = () => {
-    
+const DetailsMain = ({location}) => {
+
+        console.log('details main: ', location);
         const [startDate, setStartDate] = useState(new Date());
         function testStart (fecha){
             console.log(fecha)
@@ -38,13 +39,13 @@ const DetailsMain = () => {
     return(
         
       <main className="Container">
-
+        <h1>{location.name}</h1>
         <figure className="Container__cover">
             <img src={Cover} alt="Cover_Crossfit"/>
         </figure>
         <section className="Container__info">
             <div className="Container__about">
-                <h2>About of this location</h2>
+                <h2>{location.name}</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Ipsum, tenetur quisquam modi doloremque, dolor repudiandae 
                     aut quaerat obcaecati quia molestiae tempora unde! Voluptatibus eius, 
@@ -85,7 +86,7 @@ const DetailsMain = () => {
             <div className="Container__datesAndSlider__dates">
                 <div className="Container__datesAndSlider__dates--checkbox">
                     <input type="radio" name="" className="cbox1" id="cbox1" value="checkbos"/>
-                    <label for="Reserver Location">Reserver Location</label>
+                    <label>Reserver Location</label>
                 </div>
                 <div className="Container__datesAndSlider__dates--choose">
                     <p>
@@ -131,13 +132,13 @@ const DetailsMain = () => {
                     </div>
                 </div>
                 <div className="pagination">
-                    <label className="pagination-item" for="1">
+                    <label className="pagination-item" htmlFor="1">
                         <img src={Cross1}/>
                     </label>
-                    <label className="pagination-item" for="2">
+                    <label className="pagination-item" htmlFor="2">
                         <img src={Cross2}/>
                     </label>
-                    <label className="pagination-item" for="3">
+                    <label className="pagination-item" htmlFor="3">
                         <img src={Cross3}/>
                     </label>
                 </div>
