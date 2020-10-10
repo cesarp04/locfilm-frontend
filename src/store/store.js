@@ -10,8 +10,8 @@ const composeEnhancers =
   compose
 
 const reducers = combineReducers({
-  users: userReducer,
-  reg: registerReducer,
+  auth: userReducer,
+  userRegister: registerReducer,
 })
 
 export const store = createStore(

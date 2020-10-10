@@ -5,13 +5,16 @@ import {
   removeErrorRegister,
 } from "../actions/registerActions"
 import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 import validator from "validator"
 import "../assets/styles/components/Register.scss"
 import Header from "../components/Header"
+import { SUCCESS_STATUS } from "../types/states"
 
 const Register = () => {
+  const history = useHistory()
   const dispatch = useDispatch()
-  const { error } = useSelector((state) => state.reg)
+  const { error, status } = useSelector((state) => state.userRegister)
 
   const [form, setValues] = useState({
     username: "",
@@ -29,12 +32,15 @@ const Register = () => {
   }
   const { username, password, password2, email, phone } = form
 
-  const handleRegister = (event) => {
+  const handleRegister = (event, status) => {
     event.preventDefault()
 
     if (isFormValid()) {
       dispatch(registerUser(form))
     }
+  }
+  if (status === SUCCESS_STATUS) {
+    history.push("/login")
   }
   const isFormValid = () => {
     if (username.trim().length === 0) {
@@ -62,7 +68,7 @@ const Register = () => {
       )
       return false
     }
-    removeErrorRegister()
+    dispatch(removeErrorRegister())
     return true
   }
 
@@ -79,6 +85,7 @@ const Register = () => {
         return password
       }
     }
+    dispatch(removeErrorRegister())
   }
 
   return (
@@ -119,7 +126,6 @@ const Register = () => {
                 onChange={updateInput}
               />
             </div>
-
             <input
               type="text"
               name="email"
@@ -154,7 +160,6 @@ const Register = () => {
               value={phone}
               onChange={updateInput}
             />
-
             <input
               type="text"
               name="address"
@@ -163,21 +168,21 @@ const Register = () => {
               placeholder="address"
               onChange={updateInput}
             />
-            {/* {meta.error && meta.touched && <span>{meta.error}</span>} */}
-            {/* <input
-                type="image"
-                placeholder="Name"
-                name="picture"
-                className="auth__input"
-                autoComplete="off"
-                onChange={updateInput}
-              /> */}
+            <label htmlFor="">upload your profile picture</label>
+            <input
+              type="file"
+              placeholder="imagen perfil"
+              name="picture"
+              className="auth__input"
+              autoComplete="off"
+              onChange={updateInput}
+            />
             <button type="submit" className="btn-register">
               Register
             </button>
             {/* <Link to="" className="link">
-                Already registered?
-              </Link> */}
+              Already registered?
+            </Link> */}
           </form>
         </div>
       </div>
