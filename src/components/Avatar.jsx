@@ -1,26 +1,39 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
-import "../assets/styles/components/Avatar.scss"
-import avatar from "../assets/static/profile.jpg"
+import { useDispatch, useSelector } from "react-redux"
 
-const Avatar = () => (
-  <div className="Header__Menu">
-    <div className="Header__Menu--Profile">
-      <img src={avatar} alt="Photo Profile" />
-      <p>Regina S.</p>
+import "../assets/styles/components/Avatar.scss"
+import avatar from "../assets/static/user-icon.png"
+import { getUser } from "../actions/usersActions"
+
+const Avatar = () => {
+  const dispatch = useDispatch()
+  const { data } = useSelector((state) => state.requestUser)
+
+  useEffect(() => {
+    dispatch(getUser())
+  }, [])
+
+  return (
+    <div className="Header__Menu">
+      <div className="Header__Menu--Profile">
+        {data.picture ? (
+          <img src={data.picture} alt="Photo Profile" />
+        ) : (
+          <img src={avatar} alt="Photo Profile" />
+        )}
+        <p>{data.username}</p>
+      </div>
+      <ul>
+        <li>
+          <Link to="/user">My Acount</Link>
+        </li>
+        <li>
+          <Link to="/login">Logout</Link>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li>
-        <Link to="/user">My Acount</Link>
-      </li>
-      <li>
-        <Link to="/edit">Settings</Link>
-      </li>
-      <li>
-        <Link to="#">Logout</Link>
-      </li>
-    </ul>
-  </div>
-)
+  )
+}
 
 export default Avatar

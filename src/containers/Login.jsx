@@ -12,7 +12,6 @@ const Login = (props) => {
   let history = useHistory()
   const dispatch = useDispatch()
   const { error, status } = useSelector((state) => state.auth)
-  console.log(error)
   const [form, setValues] = useState({
     email: "",
     id: "",

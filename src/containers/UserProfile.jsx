@@ -1,42 +1,62 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+
 import Header from "../components/Header"
-import avatar from "../assets/static/profile.jpg"
+import avatar from "../assets/static/user-icon.png"
 import "../assets/styles/components/UserProfile.scss"
-// import "../assets/styles/components/UserEdit.scss"
+import "../assets/styles/components/UserEdit.scss"
+import { getUser } from "../actions/usersActions"
 
 const User = () => {
+  const dispatch = useDispatch()
+  const { data } = useSelector((state) => state.requestUser)
+
+  useEffect(() => {
+    dispatch(getUser())
+  }, [])
   return (
     <>
       <Header showSearch={false} showSignInLogin={false} />
       <section className="container-user">
         <div className="container-photo">
           <figure className="container-photo-perfil">
-            <img src={avatar} alt="Photo Perfil" />
+            {data.picture ? (
+              <img src={data.picture} alt="Photo Perfil" />
+            ) : (
+              <img src={avatar} alt="Photo Perfil" />
+            )}
           </figure>
-          <div className="identify">
-            <h2>Identify verification</h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
-              consequatur veritatis expedita voluptas, quo minus minima aliquam
-              velit sint dolores ducimus accusantium dolorem odio rem rerum
-              nulla
-            </p>
-            <div className="confirmed">
-              <p>Email address</p>
-              <p>Phone number </p>
-            </div>
+
+          <div className="container-about">
+            <h1>Hi! I'm {data.username}</h1>
+
+            {data.first_name ? (
+              <p>Your first name:{data.first_name}</p>
+            ) : (
+              <p>
+                Your first name:{"  "}
+                <strong> You have not put any first name</strong>{" "}
+              </p>
+            )}
+            {data.last_name ? (
+              <p>Your last name:{data.last_name}</p>
+            ) : (
+              <p>
+                Your last name: {"  "}
+                <strong>You have not put any last name</strong>{" "}
+              </p>
+            )}
+            {data.address ? (
+              <p>Your address:{data.address}</p>
+            ) : (
+              <p>
+                Your address: <strong>you have not put any address</strong>{" "}
+              </p>
+            )}
           </div>
-        </div>
-        <div className="container-about">
-          <h1>Hi! I'm {"<Nombre usuario>"}</h1>
-          <h3>About of {"<Nombre usuario>"}</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            labore reprehenderit ducimus nisi odio earum quibusdam laudantium
-            voluptas? Dicta cupiditate eveniet, assumenda ea qui nesciunt in?
-            Iusto non quidem doloribus!
-          </p>
-          <p>Live in Monterrey, Mexico</p>
+          <Link to="/edit">Edit your profile</Link>
+          <Link to="/">Back home</Link>
         </div>
       </section>
     </>

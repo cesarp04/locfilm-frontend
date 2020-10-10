@@ -2,12 +2,14 @@
 
 .Header__Menu {
   width: 240px;
+  height: 100%;
 }
 .Header__Menu--Profile {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   cursor: pointer;
+  padding-top: 10px;
 }
 .Header__Menu--Profile img {
   width: 62px;
@@ -22,18 +24,17 @@
 .Header__Menu ul {
   display: none;
   list-style: none;
-  padding: 0px;
+  padding: 1px;
   position: absolute;
   width: 240px;
   height: 146px;
-  margin-top: 1px;
 }
 .Header__Menu:hover ul,
 ul:hover {
   display: block;
 }
 .Header__Menu li {
-  height: 73px;
+  height: 70px;
   background-color: #161616;
   display: flex;
   align-items: center;
@@ -42,9 +43,7 @@ ul:hover {
 .Header__Menu li:nth-child(1) {
   border-bottom: 1px solid white;
 }
-.Header__Menu li:nth-child(2) {
-  border-bottom: 1px solid white;
-}
+
 .Header__Menu li img {
   width: 29px;
   margin-right: 54px;

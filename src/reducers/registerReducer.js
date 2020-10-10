@@ -10,13 +10,13 @@ import {
   FAILURE_STATUS,
 } from "../types/states"
 
-const reg = {
+const initialStateRegister = {
   status: IDLE_STATUS,
   data: {},
   error: null,
 }
 
-export const registerReducer = (state = reg, action) => {
+export const registerReducer = (state = initialStateRegister, action) => {
   switch (action.type) {
     case REGISTER_REQUEST:
       return {
