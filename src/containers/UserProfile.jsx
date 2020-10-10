@@ -2,7 +2,7 @@ import React from "react"
 import Header from "../components/Header"
 import avatar from "../assets/static/profile.jpg"
 import "../assets/styles/components/UserProfile.scss"
-import "../assets/styles/components/UserEdit.scss"
+// import "../assets/styles/components/UserEdit.scss"
 
 const User = () => {
   return (

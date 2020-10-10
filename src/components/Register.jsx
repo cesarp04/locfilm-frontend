@@ -97,7 +97,7 @@ const Register = () => {
               name="username"
               className="input_register1"
               autoComplete="off"
-              placeholder="username"
+              placeholder="Username"
               value={username}
               onChange={updateInput}
             />
@@ -107,7 +107,7 @@ const Register = () => {
                 name="first_name"
                 className="input_register"
                 autoComplete="off"
-                placeholder="first name"
+                placeholder="First name"
                 onChange={updateInput}
               />
               <input
@@ -115,7 +115,7 @@ const Register = () => {
                 name="last_name"
                 className="input_register"
                 autoComplete="off"
-                placeholder="last name"
+                placeholder="Last name"
                 onChange={updateInput}
               />
             </div>
@@ -150,7 +150,7 @@ const Register = () => {
               name="phone"
               className="input_register"
               autoComplete="off"
-              placeholder="phone"
+              placeholder="Phone"
               value={phone}
               onChange={updateInput}
             />
@@ -160,7 +160,7 @@ const Register = () => {
               name="address"
               className="input_register"
               autoComplete="off"
-              placeholder="address"
+              placeholder="Address"
               onChange={updateInput}
             />
             {/* {meta.error && meta.touched && <span>{meta.error}</span>} */}

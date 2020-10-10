@@ -1,5 +1,12 @@
 @import "../Vars.scss";
 
+.confirmed{
+  padding: 0;
+  margin-top: 15px;
+}
+.confirmed>p{
+margin: 0;
+}
 .container-user {
   margin: 52px 0 52px 0;
   display: flex;
