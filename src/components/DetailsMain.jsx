@@ -105,7 +105,6 @@ const DetailsMain = () => {
                             startDate={startDate}
                             endDate={endDate}
                             minDate={startDate}
- 
                             />                        
                        </div>
                     </div>

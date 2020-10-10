@@ -12,6 +12,7 @@ import UserProfile from "../containers/UserProfile"
 import Register from "../components/Register"
 import SearchResults from "../containers/SearchResults"
 import Details from  "../containers/Details"
+import Oops from "../containers/Oops"
 
 const App = () => (
   <BrowserRouter>
@@ -27,6 +28,9 @@ const App = () => (
         <Route exact path="/user" component={UserProfile} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/reservations" component={MyReservations} />
+        <Route exact path="/oops" component={Oops} />
+
+
       </Layout>
     </Switch>
   </BrowserRouter>
