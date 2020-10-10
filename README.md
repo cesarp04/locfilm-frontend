@@ -8,8 +8,8 @@ locfilm tries to facilitate the search for spaces to film within Mexico and Colo
 ### 🚀 Links
 
  * **Website:** 
- * **Documentation:** Pendiente
- * **Mockup:** Pendiente
+ * **Documentation:** https://www.notion.so/Locfilm-project-9ec89c7594664a84a24d54907b597c9c
+ * **Design System:** https://www.notion.so/eeeee56c4d7c4f2087f84bae05dabe1a?v=5ad71003210c4031afd39430599f8e6c
  
 ### 🛠 Installation
 ```
