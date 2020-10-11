@@ -12,7 +12,7 @@ export const requestUserReducer = (state = initialState, action) => {
     case REQUEST_USER:
       return {
         ...state,
-        status: SUCCESS_STATUS,
+        // status: SUCCESS_STATUS,
         data: action.payload,
       }
     case REQUEST_USER_ERROR:
