@@ -34,6 +34,18 @@
   text-align: center;
   border: 1px solid white;
   outline: none;
+  border: 1px solid $white;
+}
+.button-cancel:hover {
+  background: $button-color;
+}
+
+.button-save {
+  width: 180px;
+  height: 38px;
+  background: $black;
+  font-size: 14px;
+  margin: 20px 20px 0 20px;
   color: $white;
 }
 
