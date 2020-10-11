@@ -41,12 +41,12 @@ const DetailsMain = ({location}) => {
       <main className="Container">
         {/* <h1>{location.name}</h1> */}
         <figure className="Container__cover">
-            <img src={location.main_image} alt="Cover_Crossfit"/>
+            <img src={location.main_image? location.main_image: Cover} alt="Cover_Crossfit"/>
         </figure>
         <section className="Container__info">
             <div className="Container__about">
                 <h2>{location.name}</h2>
-                <p>{location.address}</p>
+                <p>Direccion: {location.address}, Ciudad:{location.city}</p>
             </div>
             <div className="Container__services">
                 <h2>Services</h2>
@@ -55,10 +55,12 @@ const DetailsMain = ({location}) => {
                     Ipsum, tenetur quisquam modi doloremque
                 </p>
                 <div className="Container__services--icons">
-                    <figure>
-                        <img src={BasecampIcon} alt="Icon Basecamp"/>
-                        <p>Basecamp area</p>
-                    </figure>
+                    {location.has_cattering?
+                        <figure>
+                            <img src={BasecampIcon} alt="Icon Basecamp"/>
+                            <p>Basecamp area</p>
+                        </figure>
+                    :null}
                     {location.has_dressing_room?
                         <figure>
                             <img src={DressRoomIcon} alt="Icon Dressing Room"/>
@@ -71,7 +73,7 @@ const DetailsMain = ({location}) => {
                             <p>Parking</p>
                         </figure>
                     :null}
-                    {location.has_dressing_room?
+                    {location.has_bathroom?
                         <figure>
                             <img src={WC} alt="Icon W.C."/>
                             <p>W.C.</p>
