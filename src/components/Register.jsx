@@ -18,6 +18,8 @@ const Register = () => {
 
   const [form, setValues] = useState({
     username: "",
+    first_name: "",
+    last_name: "",
     password: "",
     password2: "",
     email: "",
@@ -32,7 +34,7 @@ const Register = () => {
   }
   const { username, password, password2, email, phone } = form
 
-  const handleRegister = (event, status) => {
+  const handleRegister = (event) => {
     event.preventDefault()
 
     if (isFormValid()) {

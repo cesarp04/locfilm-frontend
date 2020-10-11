@@ -14,7 +14,6 @@ export const registerUser = ({
   phone,
   address,
 }) => {
-  console.log(username, first_name, last_name, email, password, phone, address)
   return (dispatch) => {
     axios({
       url: "http://45.56.74.146:8000/users/",
@@ -32,7 +31,6 @@ export const registerUser = ({
       },
     })
       .then(({ data }) => {
-        console.log(data)
         dispatch(registerRequest(data))
       })
 

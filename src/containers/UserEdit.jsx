@@ -1,53 +1,131 @@
-import React from "react"
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
+
 import Header from "../components/Header"
-import avatar from "../assets/static/profile.jpg"
+import avatar from "../assets/static/user-icon.png"
+import { SUCCESS_STATUS } from "../types/states"
+import { pacthUser, setStatus } from "../actions/udpateUserActions"
 import "../assets/styles/components/UserEdit.scss"
-import { Link } from "react-router-dom"
 
 const UserEdit = () => {
+  let history = useHistory()
+  const dispatch = useDispatch()
+  const { data } = useSelector((state) => state.requestUser)
+  const { status } = useSelector((state) => state.updateUser)
+
+  const { username, first_name, last_name, address } = data
+
+  const [form, setValues] = useState({
+    username: username,
+    first_name: first_name,
+    last_name: last_name,
+    address: address,
+  })
+
+  const updateInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    })
+  }
+  const handleUpdate = (event) => {
+    event.preventDefault()
+    dispatch(pacthUser(form))
+  }
+  if (status === SUCCESS_STATUS) {
+    dispatch(setStatus())
+    history.push("/user")
+  }
   return (
     <>
-      <Header showSearch={false} showSignInLogin={false} />
+      <Header showSearch={false} />
       <section className="container-edit">
         <div className="container-photo">
+          <h1>Edit your profile</h1>
           <figure className="container-photo-perfil">
-            <img src={avatar} alt="Photo Perfil" />
-            <Link to="" className="update-photo">
-              Update photo
-            </Link>
+            {data.picture ? (
+              <img src={data.picture} alt="Photo Perfil" />
+            ) : (
+              <img src={avatar} alt="Photo Perfil" />
+            )}
           </figure>
-          <div className="identify">
-            <h2>Identify verification</h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
-              consequatur veritatis expedita voluptas, quo minus minima aliquam
-              velit sint dolores ducimus accusantium dolorem odio rem rerum
-              nulla
-            </p>
-            <div className="confirmed">
-              <p>Email address</p>
-              <p>Phone number </p>
-            </div>
-          </div>
-        </div>
-        <div className="container-description">
-          <h1>Hi! I'm {"<Nombre usuario>"}</h1>
-          <h3>About of {"<Nombre usuario>"}</h3>
-          <div className="form-container">
-            <form action="">
-              <textarea
-                className="about"
-                name=""
-                id=""
-                cols="50"
-                rows="10"
-              ></textarea>
-              <label htmlFor="">Location</label>
-              <input type="text" name="" id="" />
-              <button className="button-cancel">Cancel</button>
-              <button className="button-save">Save</button>
-            </form>
-          </div>
+          <form onSubmit={handleUpdate} className="edit__container-form">
+            {/* <input
+              type="file"
+              placeholder="Update photo"
+              className="custom-file-input"
+              name="picture"
+              accept="image/png, image/jpeg"
+              onChange={updateInput}
+            /> */}
+            {data.username ? (
+              <label htmlFor="">Your username: {data.username}</label>
+            ) : (
+              <label htmlFor="">
+                Your username: you don't have this full field
+              </label>
+            )}
+            <input
+              type="text"
+              name="username"
+              className="edit__container--input"
+              placeholder="username"
+              autoComplete="off"
+              onChange={updateInput}
+            />
+            {data.first_name ? (
+              <label htmlFor="">Your first name: {data.first_name}</label>
+            ) : (
+              <label htmlFor="">
+                Your first name: you don't have this full field
+              </label>
+            )}
+            <input
+              type="text"
+              name="first_name"
+              className="edit__container--input"
+              placeholder="first name"
+              autoComplete="off"
+              onChange={updateInput}
+            />
+            {data.last_name ? (
+              <label htmlFor="">Your last name: {data.last_name}</label>
+            ) : (
+              <label htmlFor="">
+                Your last name: you don't have this full field
+              </label>
+            )}
+            <input
+              type="text"
+              name="last_name"
+              className="edit__container--input"
+              placeholder="last name"
+              autoComplete="off"
+              onChange={updateInput}
+            />
+            {data.address ? (
+              <label htmlFor="">Your address: {data.address}</label>
+            ) : (
+              <label htmlFor="">
+                Your address: you don't have this full field
+              </label>
+            )}
+            <input
+              type="text"
+              name="address"
+              className="edit__container--input"
+              placeholder="address"
+              autoComplete="off"
+              onChange={updateInput}
+            />
+            <button type="reset" className="button-cancel">
+              Cancel
+            </button>
+            <button type="submit" className="button-save">
+              Save
+            </button>
+          </form>
         </div>
       </section>
     </>

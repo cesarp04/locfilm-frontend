@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import avatar from "../assets/static/user-icon.png"
 import "../assets/styles/components/UserProfile.scss"
-import "../assets/styles/components/UserEdit.scss"
 import { getUser } from "../actions/usersActions"
 
 const User = () => {

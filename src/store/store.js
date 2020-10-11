@@ -4,6 +4,7 @@ import thunk from "redux-thunk"
 import { registerReducer } from "../reducers/registerReducer"
 import { userReducer } from "../reducers/userReducers"
 import { requestUserReducer } from "../reducers/requestUser"
+import { updateUserReducer } from "../reducers/updateUserReducer"
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   auth: userReducer,
   userRegister: registerReducer,
   requestUser: requestUserReducer,
+  updateUser: updateUserReducer,
 })
 
 export const store = createStore(

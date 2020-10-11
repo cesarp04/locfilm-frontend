@@ -8,7 +8,7 @@ import Header from "../components/Header"
 import "../assets/styles/components/Login.scss"
 import { SUCCESS_STATUS } from "../types/states"
 
-const Login = (props) => {
+const Login = () => {
   let history = useHistory()
   const dispatch = useDispatch()
   const { error, status } = useSelector((state) => state.auth)
