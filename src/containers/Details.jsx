@@ -1,56 +1,53 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../assets/styles/App.scss"
 
 import Header from "../components/Header"
 import DetailsMain from "../components/DetailsMain"
-import {useParams} from 'react-router-dom'
-import {getLocationById} from '../actions/locationActions'
-import { useDispatch, useSelector } from "react-redux"
+import { useParams } from 'react-router-dom'
+import { getLocationById } from '../actions/locationActions'
 
 const Details = () => {
 
   // const [location, setLocation]= useState(null);
-  const {id} = useParams();
+  const { id } = useParams();
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const [location, setLocation] = useState();
 
   let view = null;
 
-  const location = getLocationById(id);
-  console.log(location);
-    // .then((l)=>{
-    //   if(l){
-    //     setLocation(l.data);
-    //     console.log('datos ok: ',location);
-    //     setError(true);
-    //     setLoaded(true);
-    //   }else{
-    //     console.log('datos malos: ',l);
-    //     setError(true);
-    //   }
-    // })
-    // .catch((e)=>{
-    //     console.log('error: ',e);
-    //     setLoaded(false);
-    //     setError(true);
-    // });
+  useEffect(() => {
+    getLocationById(id)
+      .then((l) => {
 
-  if(location)
-  {
+        setLocation(l.data);
+        setLoaded(true);
+        setError(false);
+        console.log('datos ok: ', l.data);
+      })
+      .catch((e) => {
+        console.log('error: ', e);
+        setLoaded(false);
+        setError(true);
+      });
+  }, [setLocation,setLoaded,setError]);
+
+
+  if (location) {
     view = (
       <>
         <Header showSearch={false} showSignInLogin={true} />
         <DetailsMain location={location} />
       </>
     );
-  }else if(!error){
+  } else if (!error) {
     view = (
       <>
         <Header showSearch={false} showSignInLogin={true} />
         <h1>Loading location {id}</h1>
       </>
     );
-  }else{
+  } else {
     view = (
       <>
         <Header showSearch={false} showSignInLogin={true} />
