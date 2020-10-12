@@ -53,6 +53,10 @@
   color: $white;
   outline: none;
 }
+.input_register1:hover{
+  border: 1px solid $button-color;
+
+}
 .input_register1::placeholder{
   color: #6b6b6b;
 }
@@ -82,12 +86,16 @@
   color: $white;
   outline: none;
 }
+.input_register:hover{
+  border: 1px solid $button-color;
+
+}
 .input_register::placeholder {
   color: #6b6b6b;
 }
 
 .btn-register {
-  background-color: $button-color;
+  background-color: $primary-color;
   color: $white;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -98,7 +106,11 @@
   border-radius: 20px;
   outline: none;
 }
+.btn-register:hover{
+  background-color: $button-color;
 
+
+}
 @media screen and (max-width: 480px) {
   .container__auth__title{
     border: none;

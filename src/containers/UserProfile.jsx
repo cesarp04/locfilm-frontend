@@ -29,7 +29,7 @@ const User = () => {
           </figure>
 
           <div className="container-about">
-            <h1>Hi! I'm {data.username}</h1>
+            <h1>Hi! I&apos;m {data.username}</h1>
 
             {data.first_name ? (
               <p>Your first name:{data.first_name}</p>
@@ -55,8 +55,11 @@ const User = () => {
               </p>
             )}
           </div>
-          <Link to="/edit">Edit your profile</Link>
-          <Link to="/">Back home</Link>
+          <div className="container-links">
+            <Link to="/edit">Edit  profile</Link>
+            <Link to="/">Back home</Link>
+          </div>
+
         </div>
       </section>
     </>

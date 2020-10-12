@@ -168,15 +168,7 @@ const Register = () => {
               placeholder="Address"
               onChange={updateInput}
             />
-            <label htmlFor="">upload your profile picture</label>
-            <input
-              type="file"
-              placeholder="imagen perfil"
-              name="picture"
-              className="auth__input"
-              autoComplete="off"
-              onChange={updateInput}
-            />
+
             <button type="submit" className="btn-register">
               Register
             </button>
