@@ -9,6 +9,7 @@
   height: calc(100vh - (330px));
   margin: 0 auto;
   padding: 20px;
+  margin-bottom: 50px;
   // display: flex;
   // justify-content: center;
 }
@@ -27,7 +28,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 20px 20px 0px 0px;
 }
 .upcoming,
 .past,
@@ -46,7 +47,24 @@ img {
   border: none;
   opacity: 0.4;
 }
-
+.card__info{
+  background-color: $button-color;
+  height: auto;
+  border-radius: 0 0 20px 20px;
+  padding: 15px;
+}
+.card--btns{
+  background-color:  $button-color ;
+  border: 1px solid $white;
+  border-radius: 15px;
+  color: $white;
+  height: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.card--btns:hover{
+  background-color: $secundary-color;
+}
 // .container__card__details__img{
 //   margin-top: -270px;
 
@@ -125,5 +143,136 @@ img {
 .container__card__details--status>p:hover{
   // text-align: center;
   color: $button-color;
+}
+
+.modal-star{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.modal-star__container{
+  background-color: $secundary-color;
+  width: 30%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $white;
+  border-radius: 20px;
+}
+.modal-star__container--titles{
+  color: $white;
+  margin-bottom: 5px;
+}
+.modal-star__container__accessibility{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-star__container__accessibility--range{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+.modal-star__container__accessibility--range>input[type="radio"]{
+   
+    display: none;
+  
+}
+.modal-star__container__accessibility--range>label{
+  font-size: 18px;
+  color: $white;
+  margin-left: 4px;
+
+}
+
+.modal-star__container__accessibility--range>label:hover,
+label:hover ~ label{
+  color: $button-color;
+
+}
+
+.modal-star__container__Quality{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.modal-star__container__accessibility--btn{
+  background-color: $secundary-color;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 20px;
+  width: 34%;
+  height: 28px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-star__container__accessibility--btn:hover{
+  background-color: $button-color;
+}
+
+.modal-cancel{
+  position: fixed;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.modal-cancel--container{
+  background-color: $secundary-color;
+  border: 2px solid $white;
+  border-radius: 20px;
+  width: 34%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-cancel--container>h2{
+  color: $white;
+}
+.modal-cancel--container>p{
+  margin-top: 5px;
+  color: $white;
+}
+.modal-cancel--container-btns{
+  margin-top: 30px;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.modal-cancel--container-btns>button{
+  background-color: $secundary-color;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 20px;
+  width: 80px;
+  height: 28px;
+  cursor: pointer;
+
+
+}
+.modal-cancel--container-btns>button:hover{
+  background-color: $button-color;
 
 }

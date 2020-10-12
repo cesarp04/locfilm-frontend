@@ -89,21 +89,101 @@ function MyReservation() {
             : hasData ? reservationList.map((reservation, index) =>
               (<div key={index} className="card">
                 <figure >
-                  <img src={IMAGEN_DEFAULT} alt="" />
+                  <img src={reservation.location_id.main_image} alt=" " />
                 </figure>
-                <h3>Start Date: {reservation.start_date.substring(0, 10)}</h3>
-                <h3>End Date: {reservation.end_date.substring(0, 10)}</h3>
-                <h3>Status: {reservation.status}</h3>
-                {(reservation.status === 'Pending') ?
-                  <button onClick={() => cancelReservation(reservation.id)}>Cancel</button>
-                  : null}
-                {(reservation.status === 'Finished') ?
-                  <button onClick={() => ratingReservation(reservation.id)}>Rating</button>
-                  : null}
+                <div className="card__info">
+                <h3>{reservation.location_id.name}</h3>
+                  <p> {reservation.location_id.city}</p>
+                  <p>Status: {reservation.status}</p>
+                  {(reservation.status === 'Pending') ?
+                    <button className="card--btns" onClick={() => cancelReservation(reservation.id)}>Cancel</button>
+                    : null}
+                  {(reservation.status === 'Finished') ?
+                    <button className="card--btns" onClick={() => ratingReservation(reservation.id)}>Rating</button>
+                    : null}
+                </div>
+                
               </div>)) : <h1>No data</h1> 
           }
 
         </div>
+      </section>
+      <section className="modal-star">
+        <div className="modal-star__container">
+          
+          <div className="modal-star__container__accessibility">
+            <p className="modal-star__container--titles" >Accessibility</p>
+            <div className="modal-star__container__accessibility--range">
+              <input id="radio1" type="radio" name="estrellas" value="5"/>
+              <label for="radio1">★</label>
+
+              <input id="radio2" type="radio" name="estrellas" value="4"/>
+              <label for="radio2">★</label>
+
+              <input id="radio3" type="radio" name="estrellas" value="3"/>
+              <label for="radio3">★</label>
+
+              <input id="radio4" type="radio" name="estrellas" value="2"/>
+              <label for="radio4">★</label>
+
+              <input id="radio5" type="radio" name="estrellas" value="1"/>
+              <label for="radio5">★</label>
+            </div>
+          </div>
+
+          <div className="modal-star__container__Quality">
+            <p className="modal-star__container--titles">Quality</p>
+            <div className="modal-star__container__accessibility--range">
+              <input id="radio1" type="radio" name="estrellas" value="5"/>
+              <label for="radio1">★</label>
+
+              <input id="radio2" type="radio" name="estrellas" value="4"/>
+              <label for="radio2">★</label>
+
+              <input id="radio3" type="radio" name="estrellas" value="3"/>
+              <label for="radio3">★</label>
+
+              <input id="radio4" type="radio" name="estrellas" value="2"/>
+              <label for="radio4">★</label>
+              
+              <input id="radio5" type="radio" name="estrellas" value="1"/>
+              <label for="radio5">★</label>
+            </div>
+          </div>
+          
+          <div className="modal-star__container__Quality">
+            <p className="modal-star__container--titles">Price</p>
+            <div className="modal-star__container__accessibility--range">
+              <input id="radio1" type="radio" name="estrellas" value="5"/>
+              <label for="radio1">★</label>
+
+              <input id="radio2" type="radio" name="estrellas" value="4"/>
+              <label for="radio2">★</label>
+
+              <input id="radio3" type="radio" name="estrellas" value="3"/>
+              <label for="radio3">★</label>
+
+              <input id="radio4" type="radio" name="estrellas" value="2"/>
+              <label for="radio4">★</label>
+              
+              <input id="radio5" type="radio" name="estrellas" value="1"/>
+              <label for="radio5">★</label>
+            </div>
+            <button className="modal-star__container__accessibility--btn"> Send</button>
+          </div>        
+         
+        </div>
+      </section>
+      <section className="modal-cancel">
+            <div className="modal-cancel--container">
+              <h2>Dude! Wait!</h2>
+              <p>Are you sure you want to cancel your reservation?</p>
+              <div className="modal-cancel--container-btns">
+                  <button>No!</button>
+                  <button>Yes!</button>
+              </div>
+            </div>
+            
       </section>
     </>
   )
