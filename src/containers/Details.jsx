@@ -19,21 +19,18 @@ const Details = () => {
   useEffect(() => {
     getLocationById(id)
       .then((l) => {
-
         setLocation(l.data);
         setLoaded(true);
         setError(false);
-        console.log('datos ok: ', l.data);
       })
       .catch((e) => {
-        console.log('error: ', e);
         setLoaded(false);
         setError(true);
       });
   }, [setLocation,setLoaded,setError]);
 
 
-  if (location) {
+  if (loaded) {
     view = (
       <>
         <Header showSearch={false} showSignInLogin={true} />
