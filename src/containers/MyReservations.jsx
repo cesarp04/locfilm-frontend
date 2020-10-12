@@ -74,12 +74,16 @@ function MyReservation() {
       <Header showSearch={true} showSignInLogin={true} />
       <section className="reservation">
         <h1 className="title-reservation">My Reservations</h1>
+
         <div>
           <a className="upcoming" onClick={() => showReservation('Upcoming')}>Upcoming</a>
           <a className="past" onClick={() => showReservation('Past')}>Past</a>
           <a className="canceled" onClick={() => showReservation('Cancelled')}>Canceled</a>
+
         </div>
+        
         <div className="container">
+
 
           {!loaded?<h1>Loding data</h1>
             : hasData ? reservationList.map((reservation, index) =>
