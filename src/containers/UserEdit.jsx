@@ -40,94 +40,99 @@ const UserEdit = () => {
   return (
     <>
       <Header showSearch={false} />
-      <section className="container-edit">
-        <div className="container-photo">
-          <h1>Edit your profile</h1>
-          <figure className="container-photo-perfil">
-            {data.picture ? (
-              <img src={data.picture} alt="Photo Perfil" />
-            ) : (
-              <img src={avatar} alt="Photo Perfil" />
-            )}
-          </figure>
-          <form onSubmit={handleUpdate} className="edit__container-form">
-            {/* <input
-              type="file"
-              placeholder="Update photo"
-              className="custom-file-input"
-              name="picture"
-              accept="image/png, image/jpeg"
-              onChange={updateInput}
-            /> */}
-            {data.username ? (
-              <label htmlFor="">Your username: {data.username}</label>
-            ) : (
-              <label htmlFor="">
-                Your username: you don't have this full field
-              </label>
-            )}
-            <input
-              type="text"
-              name="username"
-              className="edit__container--input"
-              placeholder="username"
-              autoComplete="off"
-              onChange={updateInput}
-            />
-            {data.first_name ? (
-              <label htmlFor="">Your first name: {data.first_name}</label>
-            ) : (
-              <label htmlFor="">
-                Your first name: you don't have this full field
-              </label>
-            )}
-            <input
-              type="text"
-              name="first_name"
-              className="edit__container--input"
-              placeholder="first name"
-              autoComplete="off"
-              onChange={updateInput}
-            />
-            {data.last_name ? (
-              <label htmlFor="">Your last name: {data.last_name}</label>
-            ) : (
-              <label htmlFor="">
-                Your last name: you don't have this full field
-              </label>
-            )}
-            <input
-              type="text"
-              name="last_name"
-              className="edit__container--input"
-              placeholder="last name"
-              autoComplete="off"
-              onChange={updateInput}
-            />
-            {data.address ? (
-              <label htmlFor="">Your address: {data.address}</label>
-            ) : (
-              <label htmlFor="">
-                Your address: you don't have this full field
-              </label>
-            )}
-            <input
-              type="text"
-              name="address"
-              className="edit__container--input"
-              placeholder="address"
-              autoComplete="off"
-              onChange={updateInput}
-            />
-            <button type="reset" className="button-cancel">
-              Cancel
-            </button>
-            <button type="submit" className="button-save">
-              Save
-            </button>
-          </form>
-        </div>
+      <section className="container-chiff">
+        <section className="container-edit">
+          <div className="container-photo">
+            <h1 className="container-photo-title">Edit your profile</h1>
+            <figure className="container-photo-perfil">
+              {data.picture ? (
+                <img src={data.picture} alt="Photo Perfil" />
+              ) : (
+                <img src={avatar} alt="Photo Perfil" />
+              )}
+            </figure>
+            <form onSubmit={handleUpdate} className="edit__container-form">
+              {/* <input
+                type="file"
+                placeholder="Update photo"
+                className="custom-file-input"
+                name="picture"
+                accept="image/png, image/jpeg"
+                onChange={updateInput}
+              /> */}
+              {data.username ? (
+                <label htmlFor="">Your username: {data.username}</label>
+              ) : (
+                <label htmlFor="">
+                  Your username: you don&apos;t have this full field
+                </label>
+              )}
+              <input
+                type="text"
+                name="username"
+                className="edit__container--input"
+                placeholder="username"
+                autoComplete="off"
+                onChange={updateInput}
+              />
+              {data.first_name ? (
+                <label htmlFor="">Your first name: {data.first_name}</label>
+              ) : (
+                <label htmlFor="">
+                  Your first name: you don&apos;t have this full field
+                </label>
+              )}
+              <input
+                type="text"
+                name="first_name"
+                className="edit__container--input"
+                placeholder="first name"
+                autoComplete="off"
+                onChange={updateInput}
+              />
+              {data.last_name ? (
+                <label htmlFor="">Your last name: {data.last_name}</label>
+              ) : (
+                <label htmlFor="">
+                  Your last name: you don&apos;t have this full field
+                </label>
+              )}
+              <input
+                type="text"
+                name="last_name"
+                className="edit__container--input"
+                placeholder="last name"
+                autoComplete="off"
+                onChange={updateInput}
+              />
+              {data.address ? (
+                <label htmlFor="">Your address: {data.address}</label>
+              ) : (
+                <label htmlFor="">
+                  Your address: you don&apos;t have this full field
+                </label>
+              )}
+              <input
+                type="text"
+                name="address"
+                className="edit__container--input"
+                placeholder="address"
+                autoComplete="off"
+                onChange={updateInput}
+              />
+              <div className="container-btns">
+                <button type="reset" className="button-cancel">
+                  Cancel
+                </button>
+                <button type="submit" className="button-save">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
       </section>
+      
     </>
   )
 }
