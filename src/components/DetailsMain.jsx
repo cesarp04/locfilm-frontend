@@ -16,7 +16,6 @@ import Cross3 from "../assets/static/cross3.jpg"
 
 const DetailsMain = ({location}) => {
 
-        console.log('details main: ', location);
         const [startDate, setStartDate] = useState(new Date());
         function testStart (fecha){
             console.log(fecha)

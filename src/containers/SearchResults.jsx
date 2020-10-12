@@ -1,115 +1,59 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "../assets/styles/components/SearchResults.scss"
 import img1 from "../assets/static/1.jpg"
-import img2 from "../assets/static/2.jpg"
-import img3 from "../assets/static/3.jpg"
-import img4 from "../assets/static/4.jpg"
-import img5 from "../assets/static/5.jpg"
 import Header from "../components/Header"
+import {searchLocations} from '../actions/locationActions'
+import queryString from 'query-string'
+import {Link} from 'react-router-dom'
 
-const SearchResults = () => (
-  <>
-    <Header showSearch={false} showSignInLogin={true} />
-    <main className="SearchResults">
-      <section className="main-Search-Results__head">
-        <div className="main-Search-Results__head-title">
-          <h3> Search Results </h3>
-        </div>
-      </section>
-      <section className="carousel">
-        <div className="corousel__container">
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img1} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
+const SearchResults = (props) => {
+
+  const values = queryString.parse(props.location.search)
+  const [results, setResults] = useState(null);
+
+  useEffect(() => {
+    searchLocations(values.search,null)
+      .then((response)=>{
+        setResults(response.data.results);
+      });
+  }, [setResults]);
+
+  return (
+    <>
+      <Header showSearch={false} showSignInLogin={true} />
+      <main className="SearchResults">
+        <section className="main-Search-Results__head">
+          <div className="main-Search-Results__head-title">
+            <h3> Search Results </h3>
           </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img2} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
+        </section>
+        
+        <section className="carousel">
+          <div className="corousel__container">
+            
+            {results? results.map((location, index) => 
+               {return (
+
+                 <div key={index} className="carousel-item">
+                  <img className="carousel-item__img" src={location.main_image? location.main_image: img1} alt="people" />
+                  <div className="carousel-item__details">
+                    <p className="carousel-item__details--title">{location.name}</p>
+                    <p className="carousel-item__details--price">{location.price}</p>
+                    <p className="carousel-item__details--location">{location.city}</p>
+                    <div className="carousel-item__details--btn">
+                      <Link to={'locations/'+location.id}>Book Now</Link>
+                    </div>
+                  </div>
+                </div>
+                 )}
+              )
+            : null}
+
           </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img3} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img4} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img5} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img3} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img2} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img className="carousel-item__img" src={img1} alt="people" />
-            <div className="carousel-item__details">
-              <p className="carousel-item__details--title">Name of locaction</p>
-              <p className="carousel-item__details--price">$ 1,000 USD</p>
-              <p className="carousel-item__details--location">CDMX, México</p>
-              <div className="carousel-item__details--btn">
-                <a href="#">Book Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </>
-)
+        </section>
+      </main>
+    </>
+  )
+}
 
 export default SearchResults
