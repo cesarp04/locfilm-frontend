@@ -14,8 +14,9 @@ import Cross3 from "../assets/static/cross3.jpg"
 
 
 
-const DetailsMain = () => {
-    
+const DetailsMain = ({location}) => {
+
+        console.log('details main: ', location);
         const [startDate, setStartDate] = useState(new Date());
         function testStart (fecha){
             console.log(fecha)
@@ -38,18 +39,14 @@ const DetailsMain = () => {
     return(
         
       <main className="Container">
-
+        {/* <h1>{location.name}</h1> */}
         <figure className="Container__cover">
-            <img src={Cover} alt="Cover_Crossfit"/>
+            <img src={location.main_image? location.main_image: Cover} alt="Cover_Crossfit"/>
         </figure>
         <section className="Container__info">
             <div className="Container__about">
-                <h2>About of this location</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ipsum, tenetur quisquam modi doloremque, dolor repudiandae 
-                    aut quaerat obcaecati quia molestiae tempora unde! Voluptatibus eius, 
-                    corporis soluta minus quibusdam praesentium excepturi!
-                </p>
+                <h2>{location.name}</h2>
+                <p>Direccion: {location.address}, Ciudad:{location.city}</p>
             </div>
             <div className="Container__services">
                 <h2>Services</h2>
@@ -58,22 +55,30 @@ const DetailsMain = () => {
                     Ipsum, tenetur quisquam modi doloremque
                 </p>
                 <div className="Container__services--icons">
-                    <figure>
-                        <img src={BasecampIcon} alt="Icon Basecamp"/>
-                        <p>Basecamp area</p>
-                    </figure>
-                    <figure>
-                        <img src={DressRoomIcon} alt="Icon Dressing Room"/>
-                        <p>Dressing rooms</p>
-                    </figure>
-                    <figure>
-                        <img src={ParkingIcon} alt="Icon Parking"/>
-                        <p>Parking</p>
-                    </figure>
-                    <figure>
-                        <img src={WC} alt="Icon W.C."/>
-                        <p>W.C.</p>
-                    </figure>
+                    {location.has_cattering?
+                        <figure>
+                            <img src={BasecampIcon} alt="Icon Basecamp"/>
+                            <p>Basecamp area</p>
+                        </figure>
+                    :null}
+                    {location.has_dressing_room?
+                        <figure>
+                            <img src={DressRoomIcon} alt="Icon Dressing Room"/>
+                            <p>Dressing rooms</p>
+                        </figure>
+                    :null}
+                    {location.hasParking?
+                        <figure>
+                            <img src={ParkingIcon} alt="Icon Parking"/>
+                            <p>Parking</p>
+                        </figure>
+                    :null}
+                    {location.has_bathroom?
+                        <figure>
+                            <img src={WC} alt="Icon W.C."/>
+                            <p>W.C.</p>
+                        </figure>
+                    :null}
                     <figure>
                         <img src={LivingRoom} alt="Icon Living Room"/>
                         <p>Living Room</p>
@@ -85,7 +90,7 @@ const DetailsMain = () => {
             <div className="Container__datesAndSlider__dates">
                 <div className="Container__datesAndSlider__dates--checkbox">
                     <input type="radio" name="" className="cbox1" id="cbox1" value="checkbos"/>
-                    <label for="Reserver Location">Reserver Location</label>
+                    <label>Reserver Location</label>
                 </div>
                 <div className="Container__datesAndSlider__dates--choose">
                     <p>
@@ -131,13 +136,13 @@ const DetailsMain = () => {
                     </div>
                 </div>
                 <div className="pagination">
-                    <label className="pagination-item" for="1">
+                    <label className="pagination-item" htmlFor="1">
                         <img src={Cross1}/>
                     </label>
-                    <label className="pagination-item" for="2">
+                    <label className="pagination-item" htmlFor="2">
                         <img src={Cross2}/>
                     </label>
-                    <label className="pagination-item" for="3">
+                    <label className="pagination-item" htmlFor="3">
                         <img src={Cross3}/>
                     </label>
                 </div>
