@@ -9,7 +9,9 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
 const DetailsMain = ({ location }) => {
-  const [startDate, setStartDate] = useState(new Date())
+
+  const [startDate, setStartDate] = useState(new Date());
+  
   function testStart(fecha) {
     console.log(fecha)
     setStartDate(fecha)
@@ -30,7 +32,6 @@ const DetailsMain = ({ location }) => {
 
   return (
     <main className="Container">
-      {/* <h1>{location.name}</h1> */}
       <figure className="Container__cover">
         <img src={location.main_image} alt="no images available" />
       </figure>
@@ -126,14 +127,13 @@ const DetailsMain = ({ location }) => {
           <input type="radio" id="3" name="image-slide" hidden />
           <div className="slide">
             <div className="item-slide">
-              <img src="" alt="no images available" />
+              <img src={location.main_image} alt={location.description} height="400" width="400" />
             </div>
-            <div className="item-slide">
-              <img src="" alt="no images available" />
-            </div>
-            <div className="item-slide">
-              <img src="" alt="no images available" />
-            </div>
+            {location.images ? location.images.map((image, index) => {
+              return (<div key={index} className="item-slide">
+                <img src={image.image_url} alt={image.description} height="400" width="400" />
+              </div>);
+            }) : null}
           </div>
           <div className="pagination">
             <label className="pagination-item" htmlFor="1">
