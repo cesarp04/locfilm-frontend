@@ -5,8 +5,6 @@ import {
   REQUEST_USER,
   REQUEST_USER_ERROR,
   USERS_ERROR,
-  UPDATE_USER,
-  UPDATE_USER_ERROR,
 } from "../types/userTypes"
 
 export const loginUser = ({ email, password }) => {

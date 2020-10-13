@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 import "../assets/styles/components/Avatar.scss"
 import avatar from "../assets/static/user-icon.png"
-import { getUser } from "../actions/usersActions"
+import { getUser, setError } from "../actions/usersActions"
 
 const Avatar = () => {
   const dispatch = useDispatch()
@@ -32,7 +32,15 @@ const Avatar = () => {
           <Link to="/reservations">Reservations</Link>
         </li>
         <li>
-          <Link to="/login">Logout</Link>
+          <Link
+            onClick={() => {
+              localStorage.clear()
+              dispatch(setError())
+            }}
+            to="/login"
+          >
+            Logout
+          </Link>
         </li>
       </ul>
     </div>

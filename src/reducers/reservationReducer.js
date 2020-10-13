@@ -1,5 +1,9 @@
 import { IDLE_STATUS, SUCCESS_STATUS, FAILURE_STATUS } from "../types/states"
-import { REQUEST_RESERVATION, SET_ERROR_RESERVATION } from "../types/userTypes"
+import {
+  REQUEST_RESERVATION,
+  SET_ERROR_RESERVATION,
+  RESET_STATUS,
+} from "../types/userTypes"
 
 const initialStateReservation = {
   status: IDLE_STATUS,
@@ -20,6 +24,11 @@ export const reservationReducer = (state = initialStateReservation, action) => {
         ...state,
         status: FAILURE_STATUS,
         error: action.payload,
+      }
+    case RESET_STATUS:
+      return {
+        ...state,
+        status: FAILURE_STATUS,
       }
     default:
       return state
