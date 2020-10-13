@@ -56,7 +56,7 @@ npm run start
 * **Israel Yance** - Coach, Designer. Pe. [RoiFuries](https://github.com/israelyance)
 * **Crisly Gonzalez** - Coach, CR. [cesarp04](https://github.com/CrislyGonzalez)
 
-This is a project created by Platzi Master students. [ CH4 ].
+This is a project created by Platzi Master students. [ C4 ].
 
 If you want to know about the insights [click here!](https://github.com/locfilm/locfilm-frontend/pulse)
 

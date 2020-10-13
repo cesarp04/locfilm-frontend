@@ -48,7 +48,7 @@ const CheckoutMain = () => {
         {data.name ? (
           <h2>{data.name}</h2>
         ) : (
-          <h2>location name is not available</h2>
+          <h2 className="container__imgDate-name">location name is not available</h2>
         )}
         {error && (
           <div className="auth__alert-error">{error.data.non_field_errors}</div>
@@ -57,23 +57,28 @@ const CheckoutMain = () => {
           onSubmit={handleDateinput}
           className="container__imgData__data--CheckIn"
         >
-          <p>Check in:</p>
-          <input
-            className="input-date"
-            name="start_date"
-            autoComplete="off"
-            type="date"
-            onChange={updateInputDate}
-          />
-          <p>Check out:</p>
-          <input
-            className="input-date"
-            name="end_date"
-            autoComplete="off"
-            type="date"
-            onChange={updateInputDate}
-          />
-          <button type="submit">make reservation</button>
+          <div className="container__imgData__data--CheckIn-checkIn">
+            <p>Check in:</p>
+            <input
+              className="input-date"
+              name="start_date"
+              autoComplete="off"
+              type="date"
+              onChange={updateInputDate}
+            />
+          </div>
+          <div className="container__imgData__data--CheckIn-checkOut">
+            <p>Check out:</p>
+            <input
+              className="input-date"
+              name="end_date"
+              autoComplete="off"
+              type="date"
+              onChange={updateInputDate}
+            />
+          </div>
+    
+          <button className="container__imgData__data--CheckIn-btn" type="submit">Make reservation</button>
         </form>
       </section>
 

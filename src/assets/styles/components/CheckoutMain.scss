@@ -21,6 +21,7 @@
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 2;
+    
 
 
 }
@@ -31,7 +32,9 @@
     grid-row-end: 3;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    // background-color: deepskyblue;
 }
+
 
 .container__imgDate--img{
     grid-column-start: 3;
@@ -43,11 +46,24 @@
     height: 100%;
     border-radius: 20px;
 }
+.container__imgDate>h2{
+    // background-color: chocolate;
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 100px;
+
+
+
+}
+
 
 .container__imgData__data{
     grid-column-start: 8;
     grid-column-end: 12;
     margin-left: 30px;
+    // background-color: papayawhip;
 }
 
 .container__imgData__data>h2{
@@ -58,11 +74,43 @@
 
 .container__imgData__data--CheckIn{
     width: 340px;
+    height: 200px;
+    margin-top: 70px;
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 70px;
+    // background-color: fuchsia;
 }
+.container__imgData__data--CheckIn-checkIn{
+    // background-color: greenyellow;
+}
+.container__imgData__data--CheckIn-checkIn>input{
+    width: 80%;
+}
+.container__imgData__data--CheckIn-checkOut{
+    // background-color: blue;
+}
+.container__imgData__data--CheckIn-checkOut>input{
+    width: 80%;
+}
+
+.container__imgData__data--CheckIn-btn{
+    background-color: $primary-color;
+    width: 120px;
+    height: 38px;
+    border: 1px solid $white;
+    border-radius: 20px;
+    color: $white;
+}
+.container__imgData__data--CheckIn-btn:hover{
+    background-color: $button-color;
+}
+
 
 .container__imgData__data--CheckIn>p{
     font-size: 18px;
@@ -126,18 +174,21 @@
     grid-template-columns: repeat(12, 1fr);
     margin-top: 99px;
     font-size: 18px;
+    // background-color: peru;
 
 }
 .container__ticketPayMethood__Ticket{
     grid-column-start: 3;
     grid-column-end: 6;
-    margin-left: 20px;
+    // margin-left: 20px;
+    // background-color: powderblue;
 }
 .container__ticketPayMethood__Ticket__LocationPrice{
     display: flex;
     justify-content: space-between;
     width: 360px;
     margin-bottom: 10px;
+    // background-color: purple;
 }
 .container__ticketPayMethood__Ticket__Taxs{
     display: flex;
@@ -203,9 +254,14 @@
 
 @media screen and (max-width: 834px){
     .container__imgDate{
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, auto);
+        // display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        // grid-template-rows: repeat(auto, auto);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // background-color: purple;
 
     }
     .container__imgDate--img{
@@ -218,7 +274,20 @@
     .container__imgDate--img>img{
         border-radius: 0;
     }
-    .container__imgData__data{
+    .container__imgDate-name{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        // background-color: red;
+        margin: 0;
+    }
+    .container__imgDate>h2{
+        margin-bottom: 10px;
+        margin-top: 15px;
+        height: 20px;
+    }
+    .container__imgData__data--CheckIn{
         grid-column-start: 2;
         grid-column-end: 6;
         grid-row-start: 2;
@@ -373,25 +442,44 @@
 }
 @media screen and (max-width: 425px){
   
+    // .container{
+    //     display: grid;
+    //     grid-template-columns: repeat(5, 1fr);
+    //     grid-template-rows: repeat(2, auto);
+
+    // }  
     .container{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, auto);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
 
     }  
     .container>h2{
         display: none;
     }
     .container__imgDate{
-        grid-column-start: 1;
-        grid-column-end: 6;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, auto);
+        // display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        // grid-template-rows: repeat(auto, auto);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // background-color: purple;
 
     }
+    // .container__imgDate{
+    //     grid-column-start: 1;
+    //     grid-column-end: 6;
+    //     grid-row-start: 1;
+    //     grid-row-end: 2;
+    //     display: grid;
+    //     grid-template-columns: repeat(5, 1fr);
+    //     grid-template-rows: repeat(2, auto);
+
+    // }
     .container__imgDate--img{
         grid-column-start: 1;
         grid-column-end: 6;
@@ -463,6 +551,10 @@
     .container__ticketPayMethood__Ticket__Total>p{
         font-size: 20px;
 
+    }
+
+    .container__imgData__data--CheckIn{
+        margin: 0;
     }
 
 
