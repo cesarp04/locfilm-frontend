@@ -4,6 +4,7 @@ import {
   REQUEST_LOCATIONS,
   REQUEST_RESERVATION,
   SET_ERROR_RESERVATION,
+  RESET_STATUS,
 } from "../types/userTypes"
 
 export const getLocation = (id) => {
@@ -69,5 +70,10 @@ export const setErrorReservation = (payload) => {
   return {
     type: SET_ERROR_RESERVATION,
     payload,
+  }
+}
+export const resetStatus = () => {
+  return {
+    type: RESET_STATUS,
   }
 }

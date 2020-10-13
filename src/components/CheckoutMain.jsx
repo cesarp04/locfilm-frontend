@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 
 import { getLocation } from "../actions/locationsActions"
-import { makeReservation } from "../actions/locationsActions"
+import { makeReservation, resetStatus } from "../actions/locationsActions"
 import "../assets/styles/components/CheckoutMain.scss"
 import { SUCCESS_STATUS } from "../types/states"
 
@@ -36,6 +36,7 @@ const CheckoutMain = () => {
   }
   if (status === SUCCESS_STATUS) {
     history.push("/reservations")
+    dispatch(resetStatus())
   }
   return (
     <main className="container">
@@ -64,7 +65,7 @@ const CheckoutMain = () => {
             <div className="auth__alert-error">
               {error.data.start_date || error.data.end_date
                 ? "You have to put a start date and an end date"
-                : "not valid"}
+                : null}
             </div>
           )}
           <div className="container__imgData__data--CheckIn-checkIn">
