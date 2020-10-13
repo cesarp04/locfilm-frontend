@@ -76,6 +76,15 @@ const DetailsMain = ({ location }) => {
               <p>Living Room</p>
             </figure>
           </div>
+          <div className="Container__datesAndSlider__dates--choose--btnSend-a">
+              <div href="#" className="Container__datesAndSlider__dates--btn-a">
+                <Link to={`/checkout/${location.id}`}>
+                  Make your reservation{" "}
+                </Link>
+              </div>
+          </div>
+
+
         </div>
       </section>
       <section className="Container__datesAndSlider">
@@ -91,7 +100,7 @@ const DetailsMain = ({ location }) => {
             <label>Reserver Location</label>
           </div>
           <div className="Container__datesAndSlider__dates--choose">
-            <p>Choose the days to film</p>
+            <p className="Container__datesAndSlider__dates--choose--title">Choose the days to film</p>
             <div className="Container__datesAndSlider__dates--choose--btns">
               <div className="Container__datesAndSlider__dates--choose--datePicker">
                 <DatePicker
@@ -115,13 +124,13 @@ const DetailsMain = ({ location }) => {
                 />
               </div>
             </div>
-            <div className="Container__datesAndSlider__dates--choose--btnSend">
+            {/* <div className="Container__datesAndSlider__dates--choose--btnSend">
               <div href="#" className="Container__datesAndSlider__dates--btn">
                 <Link to={`/checkout/${location.id}`}>
                   Make your reservation{" "}
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="Container__datesAndSlider__slider">

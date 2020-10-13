@@ -87,6 +87,38 @@
     grid-template-rows: repeat(3, 1fr);
     margin-top: 50px;
 }
+
+.Container__datesAndSlider__dates--choose--btnSend-a{
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-top: 10px;
+    // background-color: darkviolet;
+}
+.Container__datesAndSlider__dates--btn-a{
+    width: 133px;
+    height: 38px;
+    border: 1px solid $white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Container__datesAndSlider__dates--btn-a:hover{
+    background-color:$button-color;
+
+}
+
+.Container__datesAndSlider__dates--btn-a>a{
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+}
+
+
+
+
 .Container__services--icons>figure{
     font-size: 22px;
     display: flex;
@@ -147,10 +179,14 @@
     align-items: center;
 
 }
+.Container__datesAndSlider__dates--choose--title{
+    display: none;
+}
 .Container__datesAndSlider__dates--checkbox{
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
+    display: none;
+    // margin-top: 100px;
+    // display: flex;
+    // align-items: center;
 
 
 }
@@ -167,13 +203,17 @@
     text-align: center;
     margin-top: 40px;
 }
+.ontainer__datesAndSlider__dates--choose--title{
+    display: none;
+}
 
 
 .Container__datesAndSlider__dates--choose--btns{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-top: 30px;
+    display: none;
+    // display: flex;
+    // justify-content: space-between;
+    // width: 300px;
+    // margin-top: 30px;
 }
 .Container__datesAndSlider__dates--choose--btns>div{
 
@@ -418,6 +458,7 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: auto auto;
         margin-top: 40px;
+        // background-color: darkviolet;
     }
     .Container__services>h2{
         grid-column-start: 1;
@@ -439,6 +480,14 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
         grid-column-end: 9;
         grid-row-start: 3;
         grid-row-end: 4;
+    }
+    .Container__datesAndSlider__dates--choose--btnSend-a{
+        grid-column-start: 1;
+        grid-column-end: 9;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: 10px;
+        // background-color: darkviolet;
     }
 
     .Container__datesAndSlider{
