@@ -31,7 +31,7 @@ const User = () => {
             <h1>Hi! I&apos;m {data.username}</h1>
 
             {data.first_name ? (
-              <p>Your first name:{data.first_name}</p>
+              <p>Your first name: {data.first_name}</p>
             ) : (
               <p>
                 Your first name:{"  "}
@@ -39,7 +39,7 @@ const User = () => {
               </p>
             )}
             {data.last_name ? (
-              <p>Your last name:{data.last_name}</p>
+              <p>Your last name: {data.last_name}</p>
             ) : (
               <p>
                 Your last name: {"  "}
@@ -47,7 +47,7 @@ const User = () => {
               </p>
             )}
             {data.address ? (
-              <p>Your address:{data.address}</p>
+              <p>Your address: {data.address}</p>
             ) : (
               <p>
                 Your address: <strong>you have not put any address</strong>{" "}

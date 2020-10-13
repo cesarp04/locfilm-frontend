@@ -3,6 +3,8 @@ import { loginUser, setError } from "../actions/usersActions"
 import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import validator from "validator"
+import { Link } from "react-router-dom"
+
 
 import Header from "../components/Header"
 import "../assets/styles/components/Login.scss"
@@ -92,7 +94,7 @@ const Login = () => {
           </form>
           <div className="login__container__register">
             <p className="login__container__register-p">
-              You dont have any account. <a href="#">Register</a>
+              You dont have any account. <Link to="register">Register</Link>
             </p>
           </div>
         </section>
@@ -100,5 +102,6 @@ const Login = () => {
     </>
   )
 }
+
 
 export default Login

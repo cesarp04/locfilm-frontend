@@ -46,9 +46,9 @@ const UserEdit = () => {
             <h1 className="container-photoEdit-title">Edit your profile</h1>
             <figure className="container-photoEdit-perfil">
               {data.picture ? (
-                <img src={data.picture} alt="Photo Perfil" />
+                <img className="container-photoEdit-perfil--img" src={data.picture} alt="Photo Perfil" />
               ) : (
-                <img src={avatar} alt="Photo Perfil" />
+                <img className="container-photoEdit-perfil--img" src={avatar} alt="Photo Perfil" />
               )}
             </figure>
             <form onSubmit={handleUpdate} className="edit__container-form">
