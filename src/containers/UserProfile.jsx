@@ -55,10 +55,9 @@ const User = () => {
             )}
           </div>
           <div className="container-links">
-            <Link to="/edit">Edit  profile</Link>
+            <Link to="/edit">Edit profile</Link>
             <Link to="/">Back home</Link>
           </div>
-
         </div>
       </section>
     </>

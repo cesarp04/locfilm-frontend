@@ -33,29 +33,30 @@ function MyReservation() {
   }
 
   const getUpcoming = () => {
-    return reservations.filter(r => r.status === 'Confirmed' || r.status === 'Pending');
+    return reservations.filter(
+      (r) => r.status === "Confirmed" || r.status === "Pending"
+    )
   }
 
   const getPast = () => {
-    return reservations.filter(r => r.status === 'Finished');
+    return reservations.filter((r) => r.status === "Finished")
   }
 
   const getcanceled = () => {
-    return reservations.filter(r => r.status === 'Cancelled');
+    return reservations.filter((r) => r.status === "Cancelled")
   }
 
   const showReservation = (type) => {
-
     switch (type) {
       case "Upcoming":
-        setReservationList(getUpcoming());
-        break;
+        setReservationList(getUpcoming())
+        break
       case "Past":
-        setReservationList(getPast());
-        break;
+        setReservationList(getPast())
+        break
       case "Cancelled":
-        setReservationList(getcanceled());
-        break;
+        setReservationList(getcanceled())
+        break
     }
   }
 
@@ -125,21 +126,25 @@ function MyReservation() {
       });
   }
 
-  const [reservationList, setReservationList] = useState([]);
+  const [reservationList, setReservationList] = useState([])
 
   useEffect(() => {
     getMyReservations()
       .then((response) => {
-        setReservations(response.data);
-        setReservationList(response.data.filter(r => r.status === 'Confirmed' || r.status === 'Pending'));
-        setHasData(response.data.length > 0);
-        setLoaded(true);
+        setReservations(response.data)
+        setReservationList(
+          response.data.filter(
+            (r) => r.status === "Confirmed" || r.status === "Pending"
+          )
+        )
+        setHasData(response.data.length > 0)
+        setLoaded(true)
       })
       .catch((response) => {
-        setHasData(false);
-        setLoaded(true);
+        setHasData(false)
+        setLoaded(true)
       })
-  }, [setHasData, setLoaded, setReservations, setReservationList]);
+  }, [setHasData, setLoaded, setReservations, setReservationList])
 
   const loadReservations = () => {
 
@@ -177,10 +182,15 @@ function MyReservation() {
         <h1 className="title-reservation">My Reservations</h1>
 
         <div>
-          <a className="upcoming" onClick={() => showReservation('Upcoming')}>Upcoming</a>
-          <a className="past" onClick={() => showReservation('Past')}>Past</a>
-          <a className="canceled" onClick={() => showReservation('Cancelled')}>Canceled</a>
-
+          <a className="upcoming" onClick={() => showReservation("Upcoming")}>
+            Upcoming
+          </a>
+          <a className="past" onClick={() => showReservation("Past")}>
+            Past
+          </a>
+          <a className="canceled" onClick={() => showReservation("Cancelled")}>
+            Canceled
+          </a>
         </div>
 
         <div className="container">
@@ -222,7 +232,6 @@ function MyReservation() {
                 <label htmlFor="radio5" className={rating.accesibility >= 1 ? 'star-selected' : null} onClick={() => setRatingHandler(1, 'accesibility')}>★</label>
               </div>
             </div>
-
             <div className="modal-star__container__Quality">
               <p className="modal-star__container--titles">Quality</p>
               <div className="modal-star__container__accessibility--range">

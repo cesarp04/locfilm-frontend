@@ -1,19 +1,23 @@
 @import "../Vars.scss";
 
 .Header__Menu {
-  width: 240px;
+  width: 200px;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 .Header__Menu--Profile {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
   align-items: center;
   cursor: pointer;
-  padding-top: 10px;
+  // padding-top: 10px;
+  // background-color: slateblue;
 }
 .Header__Menu--Profile img {
-  width: 62px;
-  height: 62px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%;
 }
 .Header__Menu--Profile p {
@@ -25,8 +29,9 @@
   display: none;
   list-style: none;
   padding: 1px;
+  margin-top: 210px;
   position: absolute;
-  width: 240px;
+  width: 235px;
   height: 146px;
 }
 .Header__Menu:hover ul,
@@ -55,7 +60,8 @@ ul:hover {
   margin-right: 25px;
 }
 .Header__Menu li a:hover {
-  text-decoration: underline;
+  color: $button-color;
+  text-decoration: underline $button-color;
 }
 
 .Header__Profile-photo {

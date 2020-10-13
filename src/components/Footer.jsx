@@ -1,11 +1,15 @@
 import React from "react"
 import "../assets/styles/components/Footer.scss"
+import logo from "../assets/static/logoh.png"
+
 
 const Footer = () => (
   <footer>
     <section className="footerMain">
       <div className="footerMain__links">
-        <a href="#">Terms and Conditions</a>
+        <figure className="footerMain__links--logo">
+           <img src={logo} alt="Logo" />{" "}
+        </figure>
       </div>
       <div className="footerMain_conatinerNewslatter">
         <div className="footerMain__Newsletter">
@@ -24,7 +28,7 @@ const Footer = () => (
     </section>
     <section className="footerCredits">
       <p>
-        2020. <a href="#">PLATZI MASTER</a>
+        2020. <span> PLATZI MASTER</span>
       </p>
     </section>
   </footer>
