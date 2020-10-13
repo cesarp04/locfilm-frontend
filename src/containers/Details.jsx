@@ -4,7 +4,7 @@ import "../assets/styles/App.scss"
 import Header from "../components/Header"
 import DetailsMain from "../components/DetailsMain"
 import { useParams } from 'react-router-dom'
-import { getLocationById } from '../actions/locationActions'
+import { getLocationById, getImagesLocation } from '../actions/locationActions'
 
 const Details = () => {
 
@@ -19,9 +19,20 @@ const Details = () => {
   useEffect(() => {
     getLocationById(id)
       .then((l) => {
-        setLocation(l.data);
-        setLoaded(true);
-        setError(false);
+
+        getImagesLocation(l.data.id)
+          .then((response)=>{
+            l.data.images = response.data;
+            setLocation(l.data);
+            setLoaded(true);
+            setError(false);
+          })
+          .catch((response)=>{
+            l.data.images = [];
+            setLocation(l.data);
+            setLoaded(true);
+            setError(false);
+          });
       })
       .catch((e) => {
         setLoaded(false);

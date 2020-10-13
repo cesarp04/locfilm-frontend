@@ -25,3 +25,11 @@ export const searchLocations = (textSearch, city) => {
         params: queryParams
     });
 }
+
+export const getImagesLocation = (id) => {
+    
+    return axios({
+        url: `${API_URL}/${id}/images/`,
+        method: 'get',
+    });
+}
