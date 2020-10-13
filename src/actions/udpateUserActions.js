@@ -14,7 +14,6 @@ export const pacthUser = ({
 }) => {
   const token = localStorage.getItem("token")
   const id = localStorage.getItem("id")
-  console.log(username, first_name, last_name, address)
   return (dispatch) => {
     axios({
       url: `http://45.56.74.146:8000/users/${id}/`,
