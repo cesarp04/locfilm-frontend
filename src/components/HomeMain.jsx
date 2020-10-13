@@ -24,48 +24,54 @@ const HomeMain = () => {
   }
 
   const searchLocations = () => {
-    history.push("/results?search=" + text)
-  }
-    const searchLocations = ()=>{
-        history.push('/results?search='+text)
-    }
+    if(text.trim() !== ""){
 
-    return (
-        <main className="containerHome">
-            <section className="ContainerHome__SearchHome">
-                <div className="ContainerHome__SearchHome--input">
-                    <input type="text" placeholder="You Locations" value={text} onChange={e=>setText(e.target.value)} />
-                </div>
-                {/* <div className="ContainerHome__SearchHome--filter">
+      history.push("/results?search=" + text.trim())
+    }
+  }
+
+  const keyUpHandler = (key) => {
+    if (text.trim() !== "" && key.keyCode === 13) {
+      searchLocations();
+    }
+  }
+
+  return (
+    <main className="containerHome">
+      <section className="ContainerHome__SearchHome">
+        <div className="ContainerHome__SearchHome--input">
+          <input type="text" onKeyUp={keyUpHandler} placeholder="You Locations" value={text} onChange={e => setText(e.target.value)} />
+        </div>
+        {/* <div className="ContainerHome__SearchHome--filter">
                     <a href="#"><img src={filter} alt="icon_Filter" onClick={changeModalVisibility} /></a>
                 </div> */}
-                <button onClick={searchLocations} className="ContainerHome__SearchHome--BtnSearch">
-                    Search
+        <button onClick={searchLocations} className="ContainerHome__SearchHome--BtnSearch">
+          Search
             </button>
-            </section>
-            { showFilterModal ?
-                <section className="containerHome__FilterCard">
-                    <div className="containerHome__FilterCard__container">
-                        <p className="containerHome__FilterCard__container--title">
-                            Filter
+      </section>
+      { showFilterModal ?
+        (<section className="containerHome__FilterCard">
+          <div className="containerHome__FilterCard__container">
+            <p className="containerHome__FilterCard__container--title">
+              Filter
                 </p>
-                        <div className="containerHome__FilterCard__container--selected-city">
-                            <input type="text" placeholder="Your City" />
-                        </div>
-                        <div className="ContainerHome__SearchHome__filter-card--Dates">
-                            <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={startDate} onChange={date => testStart(date)}
-                                selectsStart
-                                startDate={startDate}
-                                endDate={endDate}
-                            />
-                            <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={endDate} onChange={date => testEnd(date)}
-                                selectsEnd
-                                startDate={startDate}
-                                endDate={endDate}
-                                minDate={startDate}
-                            />
-                        </div>
-                        {/* <div className="ContainerHome__SearchHome__filter-card--range-price">
+            <div className="containerHome__FilterCard__container--selected-city">
+              <input type="text" placeholder="Your City" />
+            </div>
+            <div className="ContainerHome__SearchHome__filter-card--Dates">
+              <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={startDate} onChange={date => testStart(date)}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+              />
+              <DatePicker className="ContainerHome__SearchHome__filter-card--DatePicker" selected={endDate} onChange={date => testEnd(date)}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                minDate={startDate}
+              />
+            </div>
+            {/* <div className="ContainerHome__SearchHome__filter-card--range-price">
 
                     <input type="range" min="0" max="100" value=""/>
                 </div> */}
@@ -76,7 +82,7 @@ const HomeMain = () => {
             </div>
           </div>
         </section>
-      ) : null}
+        ) : null}
     </main>
   )
 }
