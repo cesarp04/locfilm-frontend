@@ -5,6 +5,8 @@ import { registerReducer } from "../reducers/registerReducer"
 import { userReducer } from "../reducers/userReducers"
 import { requestUserReducer } from "../reducers/requestUser"
 import { updateUserReducer } from "../reducers/updateUserReducer"
+import { locationsReducer } from "../reducers/locationsReducer"
+import { reservationReducer } from "../reducers/reservationReducer"
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -16,6 +18,8 @@ const reducers = combineReducers({
   userRegister: registerReducer,
   requestUser: requestUserReducer,
   updateUser: updateUserReducer,
+  locations: locationsReducer,
+  makeReservation: reservationReducer,
 })
 
 export const store = createStore(

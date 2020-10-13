@@ -2,8 +2,8 @@ import axios from "axios"
 import {
   SET_ERROR_LOCATION,
   REQUEST_LOCATIONS,
-  GET_DATE,
-  SET_ERROR_DATE,
+  REQUEST_RESERVATION,
+  SET_ERROR_RESERVATION,
 } from "../types/userTypes"
 
 export const getLocation = (id) => {
@@ -43,7 +43,7 @@ export const makeReservation = (id, { start_date, end_date }) => {
         dispatch(requestReservation(data))
       })
       .catch((err) => {
-        dispatch(setErrorDate(err.response))
+        dispatch(setErrorReservation(err.response))
       })
   }
 }
@@ -63,13 +63,13 @@ export const setErrorLocation = (err) => {
 
 export const requestReservation = (payload) => {
   return {
-    type: GET_DATE,
+    type: REQUEST_RESERVATION,
     payload,
   }
 }
-export const setErrorDate = (payload) => {
+export const setErrorReservation = (payload) => {
   return {
-    type: SET_ERROR_DATE,
+    type: SET_ERROR_RESERVATION,
     payload,
   }
 }
