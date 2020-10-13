@@ -48,10 +48,9 @@ const DetailsMain = ({location}) => {
                 <p>Direccion: {location.address}, Ciudad:{location.city}</p>
             </div>
             <div className="Container__services">
-                <h2>Services</h2>
+                <h2>Description</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ipsum, tenetur quisquam modi doloremque
+                   {location.description}
                 </p>
                 <div className="Container__services--icons">
                     {location.has_cattering?

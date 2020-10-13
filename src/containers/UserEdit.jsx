@@ -42,9 +42,9 @@ const UserEdit = () => {
       <Header showSearch={false} />
       <section className="container-chiff">
         <section className="container-edit">
-          <div className="container-photo">
-            <h1 className="container-photo-title">Edit your profile</h1>
-            <figure className="container-photo-perfil">
+          <div className="container-photoEdit">
+            <h1 className="container-photoEdit-title">Edit your profile</h1>
+            <figure className="container-photoEdit-perfil">
               {data.picture ? (
                 <img src={data.picture} alt="Photo Perfil" />
               ) : (
