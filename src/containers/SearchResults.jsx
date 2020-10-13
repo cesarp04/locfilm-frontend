@@ -8,15 +8,15 @@ import { Link } from "react-router-dom"
 
 const SearchResults = (props) => {
   const values = queryString.parse(props.location.search)
-  const [results, setResults] = useState(null)
+  const [results, setResults] = useState([])
   const [loaded, setLoaded] = useState(false);
   const [hasData, setHasData] = useState(false);
 
   useEffect(() => {
     searchLocations(values.search.trim(), null).then((response) => {
+      setResults(response.data.results)
       setHasData(response.data.results.length>0);
       setLoaded(true);
-      setResults(response.data.results)
     })
   }, [setResults])
 
