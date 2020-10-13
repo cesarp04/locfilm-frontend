@@ -29,6 +29,9 @@ const Avatar = () => {
           <Link to="/user">My Acount</Link>
         </li>
         <li>
+          <Link to="/reservations">Reservations</Link>
+        </li>
+        <li>
           <Link to="/login">Logout</Link>
         </li>
       </ul>

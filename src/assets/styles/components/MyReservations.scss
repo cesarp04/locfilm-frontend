@@ -113,6 +113,7 @@ img {
 .container__card__details--bts>button:hover{
   background-color: $button-color;
 }
+
 .container__card__details--dates{
   display: flex;
   width: 70%;
@@ -201,6 +202,10 @@ img {
 label:hover ~ label{
   color: $button-color;
 
+}
+
+.star-selected{
+  background-color: $button-color;
 }
 
 .modal-star__container__Quality{
