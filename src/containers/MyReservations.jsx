@@ -195,7 +195,7 @@ function MyReservation() {
           </a>
         </div>
 
-        <div className="container">
+        <div className="container-reservation">
           {!loaded ? (
             <h1>Loding data</h1>
           ) : hasData ? (

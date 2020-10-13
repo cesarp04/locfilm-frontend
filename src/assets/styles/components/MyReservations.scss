@@ -6,32 +6,28 @@
 }
 .reservation {
   width: 1024px;
-  // height: calc(100vh - (330px));
   height: auto;
   margin: 0 auto;
   padding: 20px;
   margin-bottom: 60px;
-  // display: flex;
-  // justify-content: center;
-  // background-color: darkturquoise;
 }
-.container {
+.container-reservation {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
   width: 226px;
-  height: 270px;
+  height: 320px;
   margin: 10px;
 }
 
-
-.card__container--imgs{
+.card__container--imgs {
   width: 100%;
-  height: 100%;
-
+  height: 60%;
 }
-.card__container--imgs--img{
+.card__container--imgs--img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -55,14 +51,14 @@
   border: none;
   opacity: 0.4;
 }
-.card__info{
+.card__info {
   background-color: $button-color;
   height: auto;
   border-radius: 0 0 20px 20px;
   padding: 15px;
 }
-.card--btns{
-  background-color:  $button-color ;
+.card--btns {
+  background-color: $button-color;
   border: 1px solid $white;
   border-radius: 15px;
   color: $white;
@@ -70,23 +66,27 @@
   margin-top: 10px;
   cursor: pointer;
 }
-.card--btns:hover{
+.card--btns:hover {
   background-color: $secundary-color;
 }
 // .container__card__details__img{
 //   margin-top: -270px;
 
 // }
-.container__card__details__img>figure{
+.container__card__details__img > figure {
   z-index: 0;
 }
 
-.container__card__details{
+.container__card__details {
   width: 226px;
   height: 270px;
   background-color: crimson;
   // background: linear-gradient(to top, rgba(0, 0, 0, 0.9)0%, rgba(0, 0, 0, 0)100%);
-  background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9)0%, rgba(0, 0, 0, 0)100%);;
+  background-color: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -95,20 +95,18 @@
   border-radius: 20px;
   z-index: 5;
   opacity: 0;
-
-
 }
-.container__card__details:hover{
+.container__card__details:hover {
   opacity: 1;
 }
 
-.container__card__details--bts{
+.container__card__details--bts {
   width: 70%;
   // background-color: salmon;
   display: flex;
   justify-content: space-between;
 }
-.container__card__details--bts>button{
+.container__card__details--bts > button {
   background-color: $primary-color;
   color: $white;
   height: 22px;
@@ -118,28 +116,26 @@
   border: 1px solid $white;
   cursor: pointer;
 }
-.container__card__details--bts>button:hover{
+.container__card__details--bts > button:hover {
   background-color: $button-color;
 }
 
-.container__card__details--dates{
+.container__card__details--dates {
   display: flex;
   width: 70%;
-  // background-color: salmon;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
   margin-top: 8px;
- 
 }
-.container__card__details--dates>p{
+.container__card__details--dates > p {
   width: 45%;
   text-align: center;
 }
-.container__card__details--dates>p:hover{
+.container__card__details--dates > p:hover {
   color: $button-color;
 }
-.container__card__details--status{
+.container__card__details--status {
   display: flex;
   width: 70%;
   // background-color:fuchsia;
@@ -147,14 +143,13 @@
   justify-content: center;
   margin-top: 8px;
   margin-bottom: 10px;
-
 }
-.container__card__details--status>p:hover{
+.container__card__details--status > p:hover {
   // text-align: center;
   color: $button-color;
 }
 
-.modal-star{
+.modal-star {
   display: none;
   // position: fixed;
   // z-index: 1000;
@@ -167,9 +162,7 @@
   // justify-content: center;
 }
 
-
-
-.modal-star__container{
+.modal-star__container {
   background-color: $secundary-color;
   width: 30%;
   height: 40%;
@@ -180,44 +173,40 @@
   border: 2px solid $white;
   border-radius: 20px;
 }
-.modal-star__container--titles{
+.modal-star__container--titles {
   color: $white;
   margin-bottom: 5px;
 }
-.modal-star__container__accessibility{
+.modal-star__container__accessibility {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.modal-star__container__accessibility--range{
+.modal-star__container__accessibility--range {
   direction: rtl;
   unicode-bidi: bidi-override;
 }
-.modal-star__container__accessibility--range>input[type="radio"]{
-   
-    display: none;
-  
+.modal-star__container__accessibility--range > input[type="radio"] {
+  display: none;
 }
-.modal-star__container__accessibility--range>label{
+.modal-star__container__accessibility--range > label {
   font-size: 18px;
   color: $white;
   margin-left: 4px;
-
 }
 
-.modal-star__container__accessibility--range>label:hover,
-label:hover ~ label{
+.modal-star__container__accessibility--range > label:hover,
+label:hover ~ label {
   color: $button-color;
-
 }
 
-.star-selected{
+.star-selected {
   background-color: $button-color;
 }
 
-.modal-star__container__Quality{
+.modal-star__container__Quality {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -225,7 +214,7 @@ label:hover ~ label{
   align-items: center;
   margin-top: 5px;
 }
-.modal-star__container__accessibility--btn{
+.modal-star__container__accessibility--btn {
   background-color: $secundary-color;
   color: $white;
   border: 1px solid $white;
@@ -235,11 +224,11 @@ label:hover ~ label{
   margin-top: 20px;
   cursor: pointer;
 }
-.modal-star__container__accessibility--btn:hover{
+.modal-star__container__accessibility--btn:hover {
   background-color: $button-color;
 }
 
-.modal-cancel{
+.modal-cancel {
   display: none;
   // position: fixed;
   // z-index: 1001;
@@ -252,7 +241,7 @@ label:hover ~ label{
   // justify-content: center
 }
 
-.modal-cancel--container{
+.modal-cancel--container {
   background-color: $secundary-color;
   border: 2px solid $white;
   border-radius: 20px;
@@ -263,20 +252,20 @@ label:hover ~ label{
   justify-content: center;
   align-items: center;
 }
-.modal-cancel--container>h2{
+.modal-cancel--container > h2 {
   color: $white;
 }
-.modal-cancel--container>p{
+.modal-cancel--container > p {
   margin-top: 5px;
   color: $white;
 }
-.modal-cancel--container-btns{
+.modal-cancel--container-btns {
   margin-top: 30px;
   width: 70%;
   display: flex;
   justify-content: space-around;
 }
-.modal-cancel--container-btns>button{
+.modal-cancel--container-btns > button {
   background-color: $secundary-color;
   color: $white;
   border: 1px solid $white;
@@ -284,10 +273,36 @@ label:hover ~ label{
   width: 80px;
   height: 28px;
   cursor: pointer;
-
-
 }
-.modal-cancel--container-btns>button:hover{
+.modal-cancel--container-btns > button:hover {
   background-color: $button-color;
+}
+@media (max-width: 1024px) {
+  .reservation {
+    width: 800px;
+  }
+  .container-reservation {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .reservation {
+    width: 668px;
+  }
+}
 
+@media (max-width: 500px) {
+  .reservation {
+    width: 480px;
+  }
+}
+
+@media (max-width: 400px) {
+  .reservation {
+    width: 380px;
+  }
+  .container-reservation {
+    display: block;
+  }
 }

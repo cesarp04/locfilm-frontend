@@ -7,31 +7,8 @@ import DressRoomIcon from "../assets/static/i_dress.png"
 import ParkingIcon from "../assets/static/i_parking.png"
 import WC from "../assets/static/i_bath.png"
 import LivingRoom from "../assets/static/i_livingroom.png"
-import DatePicker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css"
 
 const DetailsMain = ({ location }) => {
-
-  const [startDate, setStartDate] = useState(new Date());
-  
-  function testStart(fecha) {
-    console.log(fecha)
-    setStartDate(fecha)
-  }
-
-  const [endDate, setendDate] = useState(new Date())
-  function testEnd(fecha) {
-    console.log(fecha)
-    setendDate(fecha)
-  }
-
-  //
-  const [showFilterModal, setShowFilterModal] = useState(false)
-  function changeModalVisibility() {
-    setShowFilterModal(!showFilterModal)
-    console.log(showFilterModal)
-  }
-
   return (
     <main className="Container">
       <figure className="Container__cover">
@@ -78,75 +55,42 @@ const DetailsMain = ({ location }) => {
             </figure>
           </div>
           <div className="Container__datesAndSlider__dates--choose--btnSend-a">
-              <div href="#" className="Container__datesAndSlider__dates--btn-a">
-                <Link to={`/checkout/${location.id}`}>
-                  Make your reservation{" "}
-                </Link>
-              </div>
+            <div href="#" className="Container__datesAndSlider__dates--btn-a">
+              <Link to={`/checkout/${location.id}`}>
+                Make your reservation{" "}
+              </Link>
+            </div>
           </div>
-
-
         </div>
       </section>
       <section className="Container__datesAndSlider">
-        <div className="Container__datesAndSlider__dates">
-          <div className="Container__datesAndSlider__dates--checkbox">
-            <input
-              type="radio"
-              name=""
-              className="cbox1"
-              id="cbox1"
-              value="checkbos"
-            />
-            <label>Reserver Location</label>
-          </div>
-          <div className="Container__datesAndSlider__dates--choose">
-            <p className="Container__datesAndSlider__dates--choose--title">Choose the days to film</p>
-            <div className="Container__datesAndSlider__dates--choose--btns">
-              <div className="Container__datesAndSlider__dates--choose--datePicker">
-                <DatePicker
-                  className="Container__datesAndSlider__dates--choose--datePicker1"
-                  selected={startDate}
-                  onChange={(date) => testStart(date)}
-                  selectsStart
-                  startDate={startDate}
-                  endDate={endDate}
-                />
-              </div>
-              <div className="Container__datesAndSlider__dates--choose--inputs">
-                <DatePicker
-                  className="Container__datesAndSlider__dates--choose--datePicker1"
-                  selected={endDate}
-                  onChange={(date) => testEnd(date)}
-                  selectsEnd
-                  startDate={startDate}
-                  endDate={endDate}
-                  minDate={startDate}
-                />
-              </div>
-            </div>
-            {/* <div className="Container__datesAndSlider__dates--choose--btnSend">
-              <div href="#" className="Container__datesAndSlider__dates--btn">
-                <Link to={`/checkout/${location.id}`}>
-                  Make your reservation{" "}
-                </Link>
-              </div>
-            </div> */}
-          </div>
-        </div>
         <div className="Container__datesAndSlider__slider">
           <input type="radio" id="1" name="image-slide" hidden />
           <input type="radio" id="2" name="image-slide" hidden />
           <input type="radio" id="3" name="image-slide" hidden />
           <div className="slide">
             <div className="item-slide">
-              <img src={location.main_image} alt={location.description} height="400" width="400" />
+              <img
+                src={location.main_image}
+                alt={location.description}
+                height="400"
+                width="400"
+              />
             </div>
-            {location.images ? location.images.map((image, index) => {
-              return (<div key={index} className="item-slide">
-                <img src={image.image_url} alt={image.description} height="400" width="400" />
-              </div>);
-            }) : null}
+            {location.images
+              ? location.images.map((image, index) => {
+                  return (
+                    <div key={index} className="item-slide">
+                      <img
+                        src={image.image_url}
+                        alt={image.description}
+                        height="400"
+                        width="400"
+                      />
+                    </div>
+                  )
+                })
+              : null}
           </div>
           <div className="pagination">
             <label className="pagination-item" htmlFor="1">
