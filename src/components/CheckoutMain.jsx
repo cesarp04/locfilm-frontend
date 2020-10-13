@@ -1,87 +1,103 @@
-import React, { useState } from "react"
-import "../assets/styles/components/CheckoutMain.scss"
+import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 
-import DatePicker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css"
+import { getLocation } from "../actions/locationsActions"
+import { makeReservation } from "../actions/locationsActions"
+import "../assets/styles/components/CheckoutMain.scss"
+import { SUCCESS_STATUS } from "../types/states"
 
 const CheckoutMain = () => {
-  const [startDate, setStartDate] = useState(new Date())
-  function testStart(fecha) {
-    console.log(fecha)
-    setStartDate(fecha)
-  }
+  const { id } = useParams()
 
-  const [endDate, setendDate] = useState(new Date())
-  function testEnd(fecha) {
-    console.log(fecha)
-    setendDate(fecha)
-  }
+  const history = useHistory()
+  const dispatch = useDispatch()
+  const { data } = useSelector((state) => state.locations)
+  const { error, status } = useSelector((state) => state.makeReservation)
+  // console.log(error, status)
 
-  //
-  const [showFilterModal, setShowFilterModal] = useState(false)
-  function changeModalVisibility() {
-    setShowFilterModal(!showFilterModal)
-    console.log(showFilterModal)
-  }
+  useEffect(() => {
+    dispatch(getLocation(id))
+  }, [])
 
+  const [form, setValues] = useState({
+    start_date: "2020-02-08T00:54:22+0000",
+    end_date: "",
+  })
+  const updateInputDate = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    })
+  }
+  const handleDateinput = (event) => {
+    event.preventDefault()
+    dispatch(makeReservation(id, form))
+  }
+  if (status === SUCCESS_STATUS) {
+    history.push("/reservations")
+  }
   return (
     <main className="container">
       <h2>Checkout</h2>
       <section className="container__imgDate">
         <figure className="container__imgDate--img">
-          <img src="" alt="no images available" />
+          <img src={data.main_image} alt="The location has no image to show" />
         </figure>
-        <div className="container__imgData__data">
-          <h2>Cencalli</h2>
-          <div className="container__imgData__data--CheckIn">
-            <p>Check in:</p>
-            <DatePicker
-              className="Container__datesAndSlider__dates--choose--datePickerCheckout"
-              selected={startDate}
-              onChange={(date) => testStart(date)}
-              selectsStart
-              startDate={startDate}
-              endDate={endDate}
-            />
-          </div>
-          <div className="container__imgData__data--CheckOut">
-            <p>Check out:</p>
-            <DatePicker
-              className="Container__datesAndSlider__dates--choose--datePickerCheckout"
-              selected={endDate}
-              onChange={(date) => testEnd(date)}
-              selectsEnd
-              startDate={startDate}
-              endDate={endDate}
-              minDate={startDate}
-            />{" "}
-          </div>
-          <div className="container__imgData__data--ChangeDates">
-            <a href="#">Change Date</a>
-          </div>
-        </div>
+        {data.name ? (
+          <h2>{data.name}</h2>
+        ) : (
+          <h2>location name is not available</h2>
+        )}
+        {error && (
+          <div className="auth__alert-error">{error.data.non_field_errors}</div>
+        )}
+        <form
+          onSubmit={handleDateinput}
+          className="container__imgData__data--CheckIn"
+        >
+          <p>Check in:</p>
+          <input
+            className="input-date"
+            name="start_date"
+            autoComplete="off"
+            type="date"
+            onChange={updateInputDate}
+          />
+          <p>Check out:</p>
+          <input
+            className="input-date"
+            name="end_date"
+            autoComplete="off"
+            type="date"
+            onChange={updateInputDate}
+          />
+          <button type="submit">make reservation</button>
+        </form>
       </section>
 
       <section className="container__ticketPayMethood">
         <section className="container__ticketPayMethood__Ticket">
           <div className="container__ticketPayMethood__Ticket__LocationPrice">
             <p>Location Price:</p>
-            <p>$3,000.00</p>
+            {data.price ? (
+              <p>$ {data.price} USD</p>
+            ) : (
+              <p>the locations has no available price</p>
+            )}
           </div>
-          <div className="container__ticketPayMethood__Ticket__Taxs">
-            <p>Tax</p>
-            <p>$360.00</p>
-          </div>
+
           <div className="container__ticketPayMethood__Ticket__Total">
             <p>Total</p>
-            <p>$3,260.00</p>
+            {data.price ? <p>$ {data.price} USD</p> : <p>0</p>}
           </div>
         </section>
         <section className="container__ticketPayMethood_PayMethood">
           <h2>Payment Method</h2>
           <div className="container__ticketPayMethood_PayMethood--SPEI">
             <input
-              type="radio"
+              type="checkbox"
               name=""
               className="cbox1"
               id="cbox1"
@@ -91,7 +107,7 @@ const CheckoutMain = () => {
           </div>
           <div className="container__ticketPayMethood_PayMethood--CeditCard">
             <input
-              type="radio"
+              type="checkbox"
               name=""
               className="cbox1"
               id="cbox1"

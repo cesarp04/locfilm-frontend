@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+
 import "../assets/styles/components/Details.scss"
 import BasecampIcon from "../assets/static/i_camp.png"
 import DressRoomIcon from "../assets/static/i_dress.png"
@@ -115,7 +117,9 @@ const DetailsMain = ({ location }) => {
             </div>
             <div className="Container__datesAndSlider__dates--choose--btnSend">
               <div href="#" className="Container__datesAndSlider__dates--btn">
-                <a href="#">Check! </a>
+                <Link to={`/checkout/${location.id}`}>
+                  Make your reservation{" "}
+                </Link>
               </div>
             </div>
           </div>
