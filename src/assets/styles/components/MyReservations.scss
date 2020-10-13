@@ -155,15 +155,17 @@
 
 .modal-star {
   display: none;
-  // position: fixed;
-  // z-index: 1000;
-  // width: 100%;
-  // height: 100%;
-  // top: 0;
-  // background: rgba(0, 0, 0, 0.5);
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+}
+.modal-start-true {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-star__container {
@@ -234,15 +236,17 @@ label:hover ~ label {
 
 .modal-cancel {
   display: none;
-  // position: fixed;
-  // z-index: 1001;
-  // width: 100%;
-  // height: 100%;
-  // top: 0;
-  // background: rgba(0, 0, 0, 0.5);
-  // display: flex;
-  // align-items: center;
-  // justify-content: center
+}
+.modal-true {
+  position: fixed;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-cancel--container {
