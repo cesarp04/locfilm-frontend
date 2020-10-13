@@ -39,6 +39,10 @@ export const ratingReservation = (id, rating) => {
     const token = localStorage.getItem("token")
     const userId = localStorage.getItem("id")
 
+    if(rating.description===""){
+        rating.description ="NA";
+    }
+
     return axios({
         url: `${API_URL}/bookings/${id}/ratings/`,
         method: 'post',
