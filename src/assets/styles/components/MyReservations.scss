@@ -6,12 +6,14 @@
 }
 .reservation {
   width: 1024px;
-  height: calc(100vh - (330px));
+  // height: calc(100vh - (330px));
+  height: auto;
   margin: 0 auto;
   padding: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   // display: flex;
   // justify-content: center;
+  // background-color: darkturquoise;
 }
 .container {
   display: flex;
