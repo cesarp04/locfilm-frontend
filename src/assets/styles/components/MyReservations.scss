@@ -23,13 +23,19 @@
   margin: 10px;
 }
 
-.card figure,
-img {
+
+.card__container--imgs{
+  width: 100%;
+  height: 100%;
+
+}
+.card__container--imgs--img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
+
 .upcoming,
 .past,
 .canceled {
@@ -146,15 +152,16 @@ img {
 }
 
 .modal-star{
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
+  // position: fixed;
+  // z-index: 1000;
+  // width: 100%;
+  // height: 100%;
+  // top: 0;
+  // background: rgba(0, 0, 0, 0.5);
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 
@@ -226,15 +233,16 @@ label:hover ~ label{
 }
 
 .modal-cancel{
-  position: fixed;
-  z-index: 1001;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center
+  display: none;
+  // position: fixed;
+  // z-index: 1001;
+  // width: 100%;
+  // height: 100%;
+  // top: 0;
+  // background: rgba(0, 0, 0, 0.5);
+  // display: flex;
+  // align-items: center;
+  // justify-content: center
 }
 
 .modal-cancel--container{
