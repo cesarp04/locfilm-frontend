@@ -37,9 +37,9 @@ const HomeMain = () => {
                 <div className="ContainerHome__SearchHome--input">
                     <input type="text" placeholder="You Locations" value={text} onChange={e=>setText(e.target.value)} />
                 </div>
-                <div className="ContainerHome__SearchHome--filter">
+                {/* <div className="ContainerHome__SearchHome--filter">
                     <a href="#"><img src={filter} alt="icon_Filter" onClick={changeModalVisibility} /></a>
-                </div>
+                </div> */}
                 <button onClick={searchLocations} className="ContainerHome__SearchHome--BtnSearch">
                     Search
             </button>
