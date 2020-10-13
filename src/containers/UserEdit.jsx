@@ -46,9 +46,17 @@ const UserEdit = () => {
             <h1 className="container-photoEdit-title">Edit your profile</h1>
             <figure className="container-photoEdit-perfil">
               {data.picture ? (
-                <img className="container-photoEdit-perfil--img" src={data.picture} alt="Photo Perfil" />
+                <img
+                  className="container-photoEdit-perfil--img"
+                  src={data.picture}
+                  alt="Photo Perfil"
+                />
               ) : (
-                <img className="container-photoEdit-perfil--img" src={avatar} alt="Photo Perfil" />
+                <img
+                  className="container-photoEdit-perfil--img"
+                  src={avatar}
+                  alt="Photo Perfil"
+                />
               )}
             </figure>
             <form onSubmit={handleUpdate} className="edit__container-form">
@@ -60,21 +68,6 @@ const UserEdit = () => {
                 accept="image/png, image/jpeg"
                 onChange={updateInput}
               /> */}
-              {data.username ? (
-                <label htmlFor="">Your username: {data.username}</label>
-              ) : (
-                <label htmlFor="">
-                  Your username: you don&apos;t have this full field
-                </label>
-              )}
-              <input
-                type="text"
-                name="username"
-                className="edit__container--input"
-                placeholder="username"
-                autoComplete="off"
-                onChange={updateInput}
-              />
               {data.first_name ? (
                 <label htmlFor="">Your first name: {data.first_name}</label>
               ) : (
@@ -122,7 +115,7 @@ const UserEdit = () => {
               />
               <div className="container-btns">
                 <button type="reset" className="button-cancel">
-                  Cancel
+                  Reset
                 </button>
                 <button type="submit" className="button-save">
                   Save
@@ -132,7 +125,6 @@ const UserEdit = () => {
           </div>
         </section>
       </section>
-      
     </>
   )
 }
