@@ -23,8 +23,6 @@ export const getLocation = (id) => {
 }
 export const makeReservation = (id, { start_date, end_date }) => {
   const token = localStorage.getItem("token")
-  console.log(id)
-  console.log(start_date, end_date)
   return (dispatch) => {
     axios({
       url: `http://45.56.74.146:8000/locations/${id}/bookings/`,

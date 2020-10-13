@@ -15,14 +15,13 @@ const CheckoutMain = () => {
   const dispatch = useDispatch()
   const { data } = useSelector((state) => state.locations)
   const { error, status } = useSelector((state) => state.makeReservation)
-  // console.log(error, status)
 
   useEffect(() => {
     dispatch(getLocation(id))
   }, [])
 
   const [form, setValues] = useState({
-    start_date: "2020-02-08T00:54:22+0000",
+    start_date: "",
     end_date: "",
   })
   const updateInputDate = (event) => {
@@ -48,15 +47,26 @@ const CheckoutMain = () => {
         {data.name ? (
           <h2>{data.name}</h2>
         ) : (
-          <h2 className="container__imgDate-name">location name is not available</h2>
-        )}
-        {error && (
-          <div className="auth__alert-error">{error.data.non_field_errors}</div>
+          <h2 className="container__imgDate-name">
+            location name is not available
+          </h2>
         )}
         <form
           onSubmit={handleDateinput}
           className="container__imgData__data--CheckIn"
         >
+          {error && (
+            <div className="auth__alert-error">
+              {error.data.non_field_errors}
+            </div>
+          )}
+          {error && (
+            <div className="auth__alert-error">
+              {error.data.start_date || error.data.end_date
+                ? "You have to put a start date and an end date"
+                : "not valid"}
+            </div>
+          )}
           <div className="container__imgData__data--CheckIn-checkIn">
             <p>Check in:</p>
             <input
@@ -77,8 +87,13 @@ const CheckoutMain = () => {
               onChange={updateInputDate}
             />
           </div>
-    
-          <button className="container__imgData__data--CheckIn-btn" type="submit">Make reservation</button>
+
+          <button
+            className="container__imgData__data--CheckIn-btn"
+            type="submit"
+          >
+            Make reservation
+          </button>
         </form>
       </section>
 

@@ -179,7 +179,7 @@ function MyReservation() {
 
   return (
     <>
-      <Header showSearch={true} showSignInLogin={true} />
+      <Header showSearch={false} showSignInLogin={true} />
       <section className="reservation">
         <h1 className="title-reservation">My Reservations</h1>
 
