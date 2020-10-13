@@ -13,7 +13,7 @@ const SearchResults = (props) => {
   const [hasData, setHasData] = useState(false);
 
   useEffect(() => {
-    searchLocations(values.search, null).then((response) => {
+    searchLocations(values.search.trim(), null).then((response) => {
       setHasData(response.data.results.length>0);
       setLoaded(true);
       setResults(response.data.results)
