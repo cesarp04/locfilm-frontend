@@ -7,7 +7,7 @@ locfilm tries to facilitate the search for spaces to film within Mexico and Colo
 
 ### 🚀 Links
 
- * **Website:** 
+ * **Website:**  http://locfilm.yefersonguarin.com/
  * **Documentation:** https://www.notion.so/Locfilm-project-9ec89c7594664a84a24d54907b597c9c
  * **Design System:** https://www.notion.so/eeeee56c4d7c4f2087f84bae05dabe1a?v=5ad71003210c4031afd39430599f8e6c
  
@@ -23,7 +23,7 @@ npm install
 npm run start
 ```
 
->This project runs on **http://localhost:3000**
+>This project runs on **http://localhost:8080**
 
 **Production Environment**
 
@@ -42,7 +42,7 @@ npm run start
   * Redux
   * Webpack
 
-### ✒️ Authors
+### 🧟‍♂️ 🧟‍♀️ 🤖 Authors 
 
 * **Rodrigo Reyes** - Front-end, Designer. Mx. [RoiFuries](https://github.com/RoiFuries)
 * **Cesar Pentes** - Front-end. Col. [cesarp04](https://github.com/cesarp04)
@@ -52,6 +52,11 @@ npm run start
 * **Gabril Ospina** - Back-end. Col. [Gabospa](https://github.com/Gabospa)
 * **Camilo Romero** - Back-end. Col. [jromeroc](https://github.com/jromeroc)
 
+### ✒️ Coaches
+* **Israel Yance** - Coach, Designer. Pe. [RoiFuries](https://github.com/israelyance)
+* **Crisly Gonzalez** - Coach, CR. [cesarp04](https://github.com/CrislyGonzalez)
+
+This is a project created by Platzi Master students. [ CH4 ].
 
 If you want to know about the insights [click here!](https://github.com/locfilm/locfilm-frontend/pulse)
 
