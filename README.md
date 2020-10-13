@@ -20,7 +20,7 @@ npm install
 
 **Development Environment**
 ```
-npm run start
+ npm run start:dev
 ```
 
 >This project runs on **http://localhost:8080**
