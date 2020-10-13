@@ -9,9 +9,13 @@ import { Link } from "react-router-dom"
 const SearchResults = (props) => {
   const values = queryString.parse(props.location.search)
   const [results, setResults] = useState(null)
+  const [loaded, setLoaded] = useState(false);
+  const [hasData, setHasData] = useState(false);
 
   useEffect(() => {
     searchLocations(values.search, null).then((response) => {
+      setHasData(response.data.results.length>0);
+      setLoaded(true);
       setResults(response.data.results)
     })
   }, [setResults])
@@ -28,8 +32,8 @@ const SearchResults = (props) => {
 
         <section className="carousel">
           <div className="corousel__container">
-            {results
-              ? results.map((location, index) => {
+            {loaded?
+              hasData? results.map((location, index) => {
                   return (
                     <div key={index} className="carousel-item">
                       <img
@@ -54,7 +58,8 @@ const SearchResults = (props) => {
                     </div>
                   )
                 })
-              : null}
+              : (<h1>Not results found for {values.search}</h1>)
+            :(<h1>Loading data</h1>) }
           </div>
         </section>
       </main>
