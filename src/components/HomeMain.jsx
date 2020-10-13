@@ -24,14 +24,14 @@ const HomeMain = () => {
   }
 
   const searchLocations = () => {
-    if(text.trim() !== ""){
+    if(text && text.trim() !== ""){
 
-      history.push("/results?search=" + text.trim())
+      history.push("/results?search=" + text)
     }
   }
 
   const keyUpHandler = (key) => {
-    if (text.trim() !== "" && key.keyCode === 13) {
+    if (text && text.trim() !== "" && key.keyCode === 13) {
       searchLocations();
     }
   }
