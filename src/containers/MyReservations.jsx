@@ -88,14 +88,11 @@ function MyReservation() {
   }
 
   const cancelReservationHandler = () => {
-    console.log("Cancelar: ", currentReservation)
-
     setshowRatingModal(false)
     setshowCancelModal(false)
 
     cancelReservation(currentReservation)
       .then((response) => {
-        console.log(response)
         setMessage("The reservation has been cancelled")
         setShowMessageModal(true)
         loadReservations()
@@ -107,21 +104,17 @@ function MyReservation() {
   }
 
   const ratingReservationHandler = () => {
-    console.log("Calificar: ", currentReservation)
-
     ratingReservation(currentReservation, rating)
       .then((response) => {
-        console.log("exito: ", response)
         setshowRatingModal(false)
         setshowCancelModal(false)
         setMessage("Your rating has been sent, ¡Thank you!")
         setShowMessageModal(true)
       })
       .catch((response) => {
-        console.log("error: ", response)
         setshowRatingModal(false)
         setshowCancelModal(false)
-        setMessage("Upps, It was not possible to rating the reservation")
+        setMessage("Upps,you already rated this location")
         setShowMessageModal(true)
       })
   }
@@ -173,10 +166,7 @@ function MyReservation() {
     setRating((rating) => {
       return { ...rating, [type]: ratingInt }
     })
-
-    console.log(rating)
   }
-
   return (
     <>
       <Header showSearch={false} showSignInLogin={true} />
@@ -236,180 +226,175 @@ function MyReservation() {
           )}
         </div>
       </section>
-      {showRatingModal ? (
-        <section className="modal-star">
-          <div className="modal-star__container">
-            <div className="modal-star__container__accessibility">
-              <p className="modal-star__container--titles">Accessibility</p>
-              <div className="modal-star__container__accessibility--range">
-                <label
-                  htmlFor="radio1"
-                  className={rating.accesibility >= 5 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(5, "accesibility")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio2"
-                  className={rating.accesibility >= 4 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(4, "accesibility")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio3"
-                  className={rating.accesibility >= 3 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(3, "accesibility")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio4"
-                  className={rating.accesibility >= 2 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(2, "accesibility")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio5"
-                  className={rating.accesibility >= 1 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(1, "accesibility")}
-                >
-                  ★
-                </label>
-              </div>
-            </div>
-            <div className="modal-star__container__Quality">
-              <p className="modal-star__container--titles">Quality</p>
-              <div className="modal-star__container__accessibility--range">
-                <input type="radio" name="estrellas2" value="5" />
-                <label
-                  htmlFor="radio1"
-                  className={rating.conditions >= 5 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(5, "conditions")}
-                >
-                  ★
-                </label>
-
-                <input type="radio" name="estrellas2" value="4" />
-                <label
-                  htmlFor="radio2"
-                  className={rating.conditions >= 4 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(4, "conditions")}
-                >
-                  ★
-                </label>
-
-                <input type="radio" name="estrellas2" value="3" />
-                <label
-                  htmlFor="radio3"
-                  className={rating.conditions >= 3 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(3, "conditions")}
-                >
-                  ★
-                </label>
-
-                <input type="radio" name="estrellas2" value="2" />
-                <label
-                  htmlFor="radio4"
-                  className={rating.conditions >= 4 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(2, "conditions")}
-                >
-                  ★
-                </label>
-
-                <input type="radio" name="estrellas2" value="1" />
-                <label
-                  htmlFor="radio5"
-                  className={rating.conditions >= 1 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(1, "conditions")}
-                >
-                  ★
-                </label>
-              </div>
-            </div>
-
-            <div className="modal-star__container__Quality">
-              <p className="modal-star__container--titles">Price</p>
-              <div className="modal-star__container__accessibility--range">
-                <label
-                  htmlFor="radio1"
-                  className={rating.average >= 5 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(5, "average")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio2"
-                  className={rating.average >= 4 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(4, "average")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio3"
-                  className={rating.average >= 3 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(3, "average")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio4"
-                  className={rating.average >= 2 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(2, "average")}
-                >
-                  ★
-                </label>
-                <label
-                  htmlFor="radio5"
-                  className={rating.average >= 1 ? "star-selected" : null}
-                  onClick={() => setRatingHandler(1, "average")}
-                >
-                  ★
-                </label>
-              </div>
-
-              <button
-                className="modal-star__container__accessibility--btn"
-                onClick={ratingReservationHandler}
+      <section className={`modal-star modal-start-${showRatingModal}`}>
+        <div className="modal-star__container">
+          <div className="modal-star__container__accessibility">
+            <p className="modal-star__container--titles">Accessibility</p>
+            <div className="modal-star__container__accessibility--range">
+              <label
+                htmlFor="radio1"
+                className={rating.accesibility >= 5 ? "star-selected" : null}
+                onClick={() => setRatingHandler(5, "accesibility")}
               >
-                {" "}
-                Send
-              </button>
-              <button
-                className="modal-star__container__accessibility--btn"
-                onClick={closeModalHandler}
+                ★
+              </label>
+              <label
+                htmlFor="radio2"
+                className={rating.accesibility >= 4 ? "star-selected" : null}
+                onClick={() => setRatingHandler(4, "accesibility")}
               >
-                {" "}
-                Cancel
-              </button>
+                ★
+              </label>
+              <label
+                htmlFor="radio3"
+                className={rating.accesibility >= 3 ? "star-selected" : null}
+                onClick={() => setRatingHandler(3, "accesibility")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio4"
+                className={rating.accesibility >= 2 ? "star-selected" : null}
+                onClick={() => setRatingHandler(2, "accesibility")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio5"
+                className={rating.accesibility >= 1 ? "star-selected" : null}
+                onClick={() => setRatingHandler(1, "accesibility")}
+              >
+                ★
+              </label>
             </div>
           </div>
-        </section>
-      ) : null}
-      {showCancelModal ? (
-        <section className="modal-cancel">
-          <div className="modal-cancel--container">
-            <h2>Dude! Wait!</h2>
-            <p>Are you sure you want to cancel your reservation?</p>
-            <div className="modal-cancel--container-btns">
-              <button onClick={closeModalHandler}>No!</button>
-              <button onClick={cancelReservationHandler}>Yes!</button>
-            </div>
-          </div>
-        </section>
-      ) : null}
+          <div className="modal-star__container__Quality">
+            <p className="modal-star__container--titles">Quality</p>
+            <div className="modal-star__container__accessibility--range">
+              <input type="radio" name="estrellas2" value="5" />
+              <label
+                htmlFor="radio1"
+                className={rating.conditions >= 5 ? "star-selected" : null}
+                onClick={() => setRatingHandler(5, "conditions")}
+              >
+                ★
+              </label>
 
-      {showMessageModal ? (
-        <section className="modal-cancel">
-          <div className="modal-cancel--container">
-            <h2>{message}</h2>
-            <div className="modal-cancel--container-btns">
-              <button onClick={closeModalHandler}>Ok!</button>
+              <input type="radio" name="estrellas2" value="4" />
+              <label
+                htmlFor="radio2"
+                className={rating.conditions >= 4 ? "star-selected" : null}
+                onClick={() => setRatingHandler(4, "conditions")}
+              >
+                ★
+              </label>
+
+              <input type="radio" name="estrellas2" value="3" />
+              <label
+                htmlFor="radio3"
+                className={rating.conditions >= 3 ? "star-selected" : null}
+                onClick={() => setRatingHandler(3, "conditions")}
+              >
+                ★
+              </label>
+
+              <input type="radio" name="estrellas2" value="2" />
+              <label
+                htmlFor="radio4"
+                className={rating.conditions >= 4 ? "star-selected" : null}
+                onClick={() => setRatingHandler(2, "conditions")}
+              >
+                ★
+              </label>
+
+              <input type="radio" name="estrellas2" value="1" />
+              <label
+                htmlFor="radio5"
+                className={rating.conditions >= 1 ? "star-selected" : null}
+                onClick={() => setRatingHandler(1, "conditions")}
+              >
+                ★
+              </label>
             </div>
           </div>
-        </section>
-      ) : null}
+
+          <div className="modal-star__container__Quality">
+            <p className="modal-star__container--titles">Price</p>
+            <div className="modal-star__container__accessibility--range">
+              <label
+                htmlFor="radio1"
+                className={rating.average >= 5 ? "star-selected" : null}
+                onClick={() => setRatingHandler(5, "average")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio2"
+                className={rating.average >= 4 ? "star-selected" : null}
+                onClick={() => setRatingHandler(4, "average")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio3"
+                className={rating.average >= 3 ? "star-selected" : null}
+                onClick={() => setRatingHandler(3, "average")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio4"
+                className={rating.average >= 2 ? "star-selected" : null}
+                onClick={() => setRatingHandler(2, "average")}
+              >
+                ★
+              </label>
+              <label
+                htmlFor="radio5"
+                className={rating.average >= 1 ? "star-selected" : null}
+                onClick={() => setRatingHandler(1, "average")}
+              >
+                ★
+              </label>
+            </div>
+
+            <button
+              className="modal-star__container__accessibility--btn"
+              onClick={ratingReservationHandler}
+            >
+              {" "}
+              Send
+            </button>
+            <button
+              className="modal-star__container__accessibility--btn"
+              onClick={closeModalHandler}
+            >
+              {" "}
+              Cancel
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className={`modal-cancel modal-${showCancelModal}`}>
+        <div className="modal-cancel--container">
+          <h2>Dude! Wait!</h2>
+          <p>Are you sure you want to cancel your reservation?</p>
+          <div className="modal-cancel--container-btns">
+            <button onClick={closeModalHandler}>No!</button>
+            <button onClick={cancelReservationHandler}>Yes!</button>
+          </div>
+        </div>
+      </section>
+
+      <section className={`modal-cancel modal-${showMessageModal}`}>
+        <div className="modal-cancel--container">
+          <h2>{message}</h2>
+          <div className="modal-cancel--container-btns">
+            <button onClick={closeModalHandler}>Ok!</button>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
